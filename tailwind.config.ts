@@ -2,19 +2,72 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    screens: {
+      xxs: "350px",
+      custom3: "420px",
+      xs: "480px",
+      custom2: "580px",
+      sm: "676px",
+      md: "768px",
+      custom: "910px",
+      lg: "1050px", // laptop: Default screen size
+      xl: "1280px", //desktop
+      "2xl": "1526px",
+      "3xl": "1696px"
     },
+    extend: {
+      colors: {
+        textLgColor: "var(--text-large-color)",
+        textSmColor: "var(--text-small-color)",
+        subText: "var(--sub-text-color)",
+        navBar: {
+          linkActive: "var(--nav-link-active)"
+        },
+        mobileNav: {
+          text: "var(--mobile-text)",
+          textHover: "var(--mobile-hover-text)",
+          border: "var(--mobile-border)"
+        },
+        aboutMe: {
+          smIconBg: "var(--sm-icon-bg)",
+          aboutMeText: "var(--aboutme-text)",
+          alissa: "var(--alissa)"
+        },
+        projects: {
+          subText: "var(--project-sub-text)",
+          arrow: "var(--project-arrow)",
+          recentBg: "var(--recent-project-bg)",
+          recentHover: "var(--recent-project-bg-hover)"
+        },
+        contact: {
+          label: "var(--label-text)",
+          send: "var(--send-btn)",
+          buttonBorder: "var(--button-border)",
+          buttonHover: "var(--button-bg-hover)"
+        },
+        blog: {
+          lgText: "var(--blog-lg-text)",
+          border: "var(--blog-input-border)",
+          tagBg: "var(--tag-btn-bg)"
+        },
+        post: {
+          bodyText: "var(--text-body)",
+          bodyTextLg: "var(--text-body-lg)",
+          icon: "var(--icon)",
+          iconHover: "var(--icon-hover)",
+          hyperlink: "var(--hyperlink)",
+          hyperlinkHover: "var(--hyperlink-hover)",
+          quote: "var(--quote)",
+          quoteAuthor: "var(--quote-author)"
+        }
+      }
+    }
   },
-  plugins: [],
+  plugins: []
 };
 export default config;
