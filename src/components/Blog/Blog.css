@@ -1,0 +1,52 @@
+.Card__Container {
+  background-color: var(--blog-card-container);
+  border: solid 2px var(--blog-card-border);
+}
+.Card__Container:hover {
+  border: solid 2px var(--blog-card-border-hover);
+  transition-duration: 0.2s;
+}
+
+/* TAG BUTTON */
+.focus-ring {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.focus-ring:hover {
+  box-shadow: var(--tag-btn-shadow);
+}
+
+/* COPY URL BUTTON */
+
+.url-button {
+  display: none;
+  right: 1rem;
+  top: 10px;
+}
+
+@media screen and (min-width: 420px) {
+  .Card__Container:hover > .url-button {
+    display: block;
+  }
+  .Card__Container:focus > .url-button {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .url-button {
+    display: block;
+  }
+}
+
+/* SUBSCRIBE BUTTON */
+.Subscribe__Button {
+  transition-property: all;
+  transition-duration: 0.3s;
+}
+
+.Subscribe__Button:hover {
+  box-shadow: var(--tag-btn-shadow);
+}
+
