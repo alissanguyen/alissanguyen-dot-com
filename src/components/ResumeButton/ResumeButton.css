@@ -1,0 +1,26 @@
+
+/* And from the left */
+.slide:hover,
+.slide:focus {
+  box-shadow: inset 16em 0 0 0 var(--resume-btn-color);
+}
+
+.ResumeButton__Wrapper button {
+  color: var(--resume-btn-color);
+  transition: 0.35s;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.ResumeButton__Wrapper button:hover,
+.ResumeButton__Wrapper button:focus {
+  border-color: var(--resume-btn-color);
+  color: #000000;
+}
+
+.ResumeButton__Wrapper button {
+  background: none;
+  border: 2px solid;
+  border-radius: 30px;
+  line-height: 1;
+  padding: .75em 1.25em;
+}
