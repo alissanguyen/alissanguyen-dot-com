@@ -3,7 +3,7 @@ import * as React from "react";
 import ThemeButton from "../ThemeButton/ThemeButton";
 import { fixedWidthLayoutClasses, NAVBAR_ID, topLevelLinksOnDesktop } from "@/constants";
 import MobileMenu from "./MobileMenu";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useTheme } from "@/providers/ThemeProvider";
 import { useModalContext } from "@/providers/ModalProvider";
 import Link from "next/link";

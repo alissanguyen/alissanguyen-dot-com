@@ -11,11 +11,11 @@ const getTextColorClassNameForNavLink = (
   currentTheme: SupportedTheme
 ) => {
   if (currentTheme === SupportedTheme.DARK) {
-    return "text-gray-400 hover:text-white";
+    return "text-gray-500 hover:text-white";
   }
 
   if (currentTheme === SupportedTheme.LIGHT) {
-    return "text-gray-400 hover:text-black";
+    return "text-gray-500/80 hover:text-black";
   }
 };
 
