@@ -1,7 +1,6 @@
 
 import * as React from "react";
 import "./ImageMedia.css"
-import Image from "next/image";
 
 interface Props {
   src: string;
@@ -12,6 +11,7 @@ interface Props {
 const ImageMedia: React.FC<Props> = (props) => {
   return (
     <div className="BlogPost__ImageMedia__Container">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={"https:" + props.src}
         alt={props.alt ? props.alt : "thumbnail"}

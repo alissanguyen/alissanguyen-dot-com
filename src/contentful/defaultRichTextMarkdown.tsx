@@ -159,7 +159,7 @@ export const options: Options = {
               className="flex flex-col custom2:flex-row w-full EmbeddedEntry_BlogPost_Card mt-4 px-5 pt-5 custom2:p-5 rounded-lg"
               key={post.blogPostSlug}
             >
-              <img
+              <Image
                 src={post.blogPostSplash.fields.file.url}
                 alt={post.blogPostSplash.fields.title}
                 title={post.blogPostSplash.fields.title}

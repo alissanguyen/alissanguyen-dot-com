@@ -2,7 +2,6 @@
 import { ContentfulIllustration } from "@/contentful/types";
 import { useTheme } from "@/providers/ThemeProvider";
 import { SupportedTheme } from "@/types";
-import Image from "next/image";
 import * as React from "react";
 
 interface Props {
@@ -24,6 +23,7 @@ const Illustration: React.FC<Props> = (props) => {
   return (
     <div className={`Illustration__Container rounded-lg ${padding}`}>
       <a href={imageSrc} target="_blank">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           title={"Illustration for " + props.rawData.illustrationName}
           src={imageSrc}

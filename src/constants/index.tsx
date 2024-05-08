@@ -8,6 +8,31 @@ import {
   FaLinkedin
 } from "react-icons/fa";
 
+import LaunchCountdownIcon from "../../public/assets/otherprojects/launch.png"
+import ClipboardIcon from "../../public/assets/otherprojects/paper-clip.png"
+import GitHubSpotterIcon from "../../public/assets/otherprojects/spotter.png"
+import AtomIcon from "../../public/assets/otherprojects/atom.png"
+import CalculatorIcon from "../../public/assets/otherprojects/calculator.png"
+import InvoiceAppIcon from "../../public/assets/otherprojects/invoice.png"
+import LoLIcon from "../../public/assets/otherprojects/game.png"
+import PomodoroIcon from "../../public/assets/otherprojects/pomodoro.png"
+import WeatherlyIcon from "../../public/assets/otherprojects/weather.png"
+
+import PythonIcon from "../../public/assets/images/tech/python.svg";
+import AWSIcon from "../../public/assets/images/tech/aws-dark.svg";
+import CloudflareIcon from "../../public/assets/images/tech/cloudflare.svg";
+import MongoDBIcon from "../../public/assets/images/tech/mongodb.svg";
+import FirebaseIcon from "../../public/assets/images/tech/firebase.svg";
+import ContentfulIcon from "../../public/assets/images/tech/contentful.svg";
+import PytorchIcon from "../../public/assets/images/tech/pytorch.svg";
+import TensorFlowIcon from "../../public/assets/images/tech/tensorflow.svg";
+import SendGridIcon from "../../public/assets/images/tech/sendgrid.svg";
+import VercelIcon from "../../public/assets/images/tech/vercel.svg";
+import RemixIcon from "../../public/assets/images/tech/remix.svg";
+import TailwindIcon from "../../public/assets/images/tech/tailwindcss.svg";
+import NPMIcon from "../../public/assets/images/tech/npm.svg";
+import NetlifyIcon from "../../public/assets/images/tech/netlify.svg";
+
 export const IMAGE_WIDTH = "1200";
 export const IMAGE_HEIGHT = "630";
 export const PORTFOLIO_WEBSITE_NAME = "Alissa Nguyen";
@@ -76,7 +101,6 @@ export const topLevelLinksOnDesktop: { href: string; displayName: string; onClic
   },
 ];
 
-export const THEME_COOKIE_KEY = "alissa_nguyen_dev_theme";
 interface SocialMediaIconData {
   name: string;
   className: string;
@@ -118,28 +142,27 @@ export const sm: SocialMediaIconData[] = [
 export const contactFormHtmlId = "contact-form";
 
 export const tags = [
-  { id: "algorithms", name: "algorithms" },
-  { id: "tutorials", name: "tutorials" },
-  { id: "frontEnd", name: "front-end" },
-  { id: "backEnd", name: "backend" },
-  { id: "css", name: "css" },
-  { id: "html", name: "html" },
-  { id: "javascript", name: "javascript" },
-  { id: "performance", name: "performance" },
-  { id: "personal", name: "personal" },
-  { id: "productivity", name: "productivity" },
-  { id: "react", name: "react" },
-  { id: "remix", name: "remix" },
-  { id: "typescript", name: "typescript" },
-  { id: "git", name: "git" },
-  { id: "resources", name: "resources" },
-  { id: "testing", name: "testing" },
-  { id: "general", name: "general" },
-  { id: "security", name: "security" },
-  { id: "hosting", name: "hosting" },
-  { id: "databases", name: "databases" },
-  { id: "aiml", name: "AI/ML" },
-  { id: "dataStructures", name: "data structures" },
+  { id: "algorithms", name: "algorithms" }, //1
+  { id: "tutorials", name: "tutorials" }, //2
+  { id: "frontEnd", name: "front-end" }, //3
+  { id: "backEnd", name: "backend" }, //4
+  { id: "css", name: "css" }, //5
+  { id: "html", name: "html" }, //6
+  { id: "javascript", name: "javascript" }, //7
+  { id: "personal", name: "personal" }, //8
+  { id: "react", name: "react" }, //9
+  { id: "remix", name: "remix" }, //10
+  { id: "pytorch", name: "pytorch" }, 
+  { id: "git", name: "git" }, //12
+  { id: "resources", name: "resources" }, //13
+  { id: "testing", name: "testing" }, //14
+  { id: "security", name: "security" }, //15
+  { id: "hosting", name: "hosting" }, //16
+  { id: "databases", name: "databases" }, //17
+  { id: "aiml", name: "AI/ML" }, //18
+  { id: "dataStructures", name: "data structures" }, //19
+  { id: "python", name: "python" }, //20
+  { id: "misc", name: "miscellaneous" }, //21
 ];
 
 export const enum TEXT_HIGHLIGHT {
@@ -171,78 +194,80 @@ export const enum STICKY_BORDER {
 }
 export const fixedWidthLayoutClasses = `relative max-w-screen-xl w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
 
-export const tech = [
+
+export const techs = [
   {
     id: 'python',
     name: 'Python',
-    icon: "assets/images/tech/python.svg"
+    icon: PythonIcon
   },
   {
     id: "aws",
     name: "AWS",
-    icon: "assets/images/tech/aws-dark.svg"
+    icon: AWSIcon
   },
   {
     id: "cloudflare",
     name: "Cloudflare",
-    icon: "assets/images/tech/cloudflare.svg"
+    icon: CloudflareIcon
   },
   {
     id: "mondodb",
     name: "MongoDB",
-    icon: "assets/images/tech/mongodb.svg"
+    icon: MongoDBIcon
   },
   {
     id: "firebase",
     name: "Firebase",
-    icon: "assets/images/tech/firebase.svg"
+    icon: FirebaseIcon
   },
   {
     id: "contentful",
     name: "Contentful",
-    icon: "assets/images/tech/contentful.svg"
+    icon: ContentfulIcon
   },
   {
     id: "pytorch",
     name: "Pytorch",
-    icon: "assets/images/tech/pytorch.svg"
+    icon: PytorchIcon
   },
   {
     id: "tensorflow",
     name: "TensorFlow",
-    icon: "assets/images/tech/tensorflow.svg"
+    icon: TensorFlowIcon
   },
   {
     id: "sendgrid",
     name: "SendGrid",
-    icon: "assets/images/tech/sendgrid.svg"
+    icon: SendGridIcon
   },
   {
     id: "vercel",
     name: "Vercel",
-    icon: "assets/images/tech/vercel.svg"
+    icon: VercelIcon
   },
   {
     id: "remix",
     name: "Remix",
-    icon: "assets/images/tech/remix.svg"
+    icon: RemixIcon
   },
   {
     id: "tailwind",
     name: "Tailwind",
-    icon: "assets/images/tech/tailwindcss.svg"
+    icon: TailwindIcon
   },
   {
     id: "npm",
     name: "NPM",
-    icon: "assets/images/tech/npm.svg"
+    icon: NPMIcon
   },
   {
     id: "netlify",
     name: "Netlify",
-    icon: "assets/images/tech/netlify.svg"
+    icon: NetlifyIcon
   },
-]
+];
+
 // export const abilities = [
 //   "Writing easily understood, modular, fast, and type-safe code with TypeScript and modern JavaScript syntax and publishing packages to NPM.",
 //   "Responsive and performant web pages with React or Remix, with and SSR for a better user experience.",
@@ -292,7 +317,7 @@ export const mainProjects = [
   },
   {
     name: "Memory Game",
-    description: "A memory game website with multiplayer feature. Players can be in group of 1-4 people. Offer icon or number themes and grid of 4x4 or 6x6.",
+    description: "A memory game with multiplayer feature. Players can be in group of 1-4 people. Offer icon or number themes and grid of 4x4 or 6x6.",
     gitRepo: "https://github.com/alissanguyen/memory-game",
     frameworks: "Javascript, HTML, CSS",
     role: "2020 — Web development",
@@ -304,63 +329,63 @@ export const mainProjects = [
 
 export const otherProjects = [
   {
-    iconSrc: "/assets/otherprojects/launch.png",
+    iconSrc: LaunchCountdownIcon,
     name: "Launch Countdown",
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
     website: "https://launch.alissanguyen.dev"
   },
   {
-    iconSrc: "/assets/otherprojects/paper-clip.png",
+    iconSrc: ClipboardIcon,
     name: "Clipboard Page",
     description: "Responsive landing page for a tool called Clipboard with animations and transitions.",
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
     website: "https://clipboard.alissanguyen.dev",
   },
   {
-    iconSrc: "/assets/otherprojects/spotter.png",
+    iconSrc: GitHubSpotterIcon,
     name: "GitHub Spotter 2.0",
     description: "A website designed to search GitHub users by usernames with GitHub API.",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
     website: "https://githubspotter2.alissanguyen.dev"
   },
   {
-    iconSrc: "/assets/otherprojects/atom.png",
+    iconSrc: AtomIcon,
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
     website: "https://atom.alissanguyen.dev",
   },
   {
-    iconSrc: "/assets/otherprojects/calculator.png",
+    iconSrc: CalculatorIcon,
     name: "Calculator App",
     description: "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
     website: "https://calculator.alissanguyen.dev",
   },
   {
-    iconSrc: "/assets/otherprojects/invoice.png",
+    iconSrc: InvoiceAppIcon,
     name: "Invoice App Demo",
     description: "A demo UI for invoices management.",
     gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
     website: "https://invoices.alissanguyen.dev"
   },
   {
-    iconSrc: "/assets/otherprojects/game.png",
+    iconSrc: LoLIcon,
     name: "League of Legends",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
     website: "https://league.alissanguyen.dev",
   },
   {
-    iconSrc: "/assets/otherprojects/pomodoro.png",
+    iconSrc: PomodoroIcon,
     name: "Pomodoro Timer App",
     description: "A pomodoro inspired timer with mobile-first design.",
     gitRepo: "https://github.com/alissanguyen/pomodoro-app",
     website: "https://pomodoro.alissanguyen.dev/"
   },
   {
-    iconSrc: "/assets/otherprojects/weather.png",
+    iconSrc: WeatherlyIcon,
     name: "Weatherly",
     description: "A 5-day weather website that includes forecast for every 3 hours.",
     gitRepo: "https://github.com/alissanguyen/weatherly",
