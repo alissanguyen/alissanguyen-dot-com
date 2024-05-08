@@ -18,7 +18,7 @@ const WorkExperience: React.FC<Props> = ({ }) => {
                 <ul className="list-disc flex flex-col gap-3 Resume__SmallText">
                     <li className='ml-5 custom3:ml-10 xs:ml-20 text-lg custom3:w-4/5 tracking-wide'>
                         Created {" "}
-                        <a href="https://www.alissanguyen.dev" target='_blank' className='text-emerald-600 hover:text-emerald-500 relative inline-block'>alissanguyen.dev
+                        <a href="https://www.alissanguyen.com" target='_blank' className='text-emerald-600 hover:text-emerald-500 relative inline-block'>alissanguyen.com
                             <span className="underline-animation"></span>
                         </a>, a development portfolio and technical blog with ~6,000 unique monthly active readers. Built with React, TypeScript, Remix and uses Contentful as a headless CMS. Supports theme switching between light-mode and dark-mode using session cookies and Tailwind CSS. Received a 100 score on Google Chrome Lighthouse&apos;s &quot;Best Practices&quot;, &quot;Accessibility&quot; and &quot;SEO&quot; categories and &gt;90 for &quot;Performance&quot;. Incorporates continuous deployment via Vercel and is hosted behind Cloudflare for delivery at the edge and DDoS protection
                     </li>

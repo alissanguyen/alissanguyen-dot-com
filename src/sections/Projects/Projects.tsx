@@ -1,15 +1,7 @@
 import * as React from "react";
 import FeaturedProjects from "./FeaturedProjects";
 import OtherProjects from "./OtherProjects";
-import styles from "./Projects.css";
-import { LinksFunction } from "@remix-run/node";
-
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
+import "./Projects.css"
 
 const Projects: React.FC = ({}) => {
   return (

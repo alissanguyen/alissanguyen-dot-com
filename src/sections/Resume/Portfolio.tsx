@@ -1,24 +1,28 @@
 import * as React from 'react';
 import SparkleSVG from '@/components/SparkleSVG';
+import ChessThumb from "../../../public/assets/portfolio-projects/chess.png"
+import ImageGeneratorThumb from "../../../public/assets/portfolio-projects/image.png"
+import SignLanguageThumb from "../../../public/assets/portfolio-projects/sign.png"
+import Image, { StaticImageData } from 'next/image';
 
 const portfolioProjects = [
     {
         id: "chess",
         name: "Chess Game with AI",
         techStack: ["Python", "PIP", "Sublime Text"],
-        thumbSrc: "/assets/portfolio-projects/chess.png"
+        thumbSrc: ChessThumb
     },
     {
         id: "imageGenerator",
         name: "AI Image Generator",
         techStack: ["JavaScript", "GPT"],
-        thumbSrc: "/assets/portfolio-projects/image.png"
+        thumbSrc: ImageGeneratorThumb
     },
     {
         id: "signLanguage",
         name: "Sign Language Detection with TensorFlow",
         techStack: ["Python", "TensorFlow"],
-        thumbSrc: "/assets/portfolio-projects/sign.png"
+        thumbSrc: SignLanguageThumb
     }
 ]
 
@@ -43,7 +47,7 @@ interface Project {
     id: string;
     name: string;
     techStack: string[];
-    thumbSrc: string | undefined;
+    thumbSrc: StaticImageData;
 }
 
 interface Props {
@@ -53,7 +57,7 @@ interface Props {
 const PortfolioProjectCard: React.FC<Props> = (props) => {
     return (
         <div className="ProjectCard__Wrapper flex rounded-2xl relative overflow-hidden" key={props.project.id}>
-            <img src={props.project.thumbSrc} alt="" className='ProjectCard__Image z-[2] rounded-2xl filter brightness-50 hover:brightness-70 hover:scale-110 transition-transform duration-500 ease-in-out transform w-full h-full object-cover relative overflow-hidden' />
+            <Image src={props.project.thumbSrc!} alt="" className='ProjectCard__Image z-[2] rounded-2xl filter brightness-50 hover:brightness-70 hover:scale-110 transition-transform duration-500 ease-in-out transform w-full h-full object-cover relative overflow-hidden' />
             <div className="ProjectCard__Description flex flex-col items-start gap-5 z-[10] absolute text-white bottom-0 p-3 md:p-5 bg-blend-overlay">
                 <span className="font-medium text-xl drop-shadow-lg">
                     {props.project.name}

@@ -37,7 +37,7 @@ const ExternalLinkButton: React.FC<Props> = (props) => {
       >
         {React.cloneElement(children, {
           ...children.props,
-          className: "ExternalLinkButton__ButtonContents relative inline-flex",
+          className: "ExternalLinkButton__ButtonContents relative inline-flex font-light",
           children: (
             <>
               {children.props.children}
