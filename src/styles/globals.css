@@ -1,3 +1,6 @@
+/* CUSTOM GLOBAL STYLES EVEN MORE HAHA */
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -116,6 +119,7 @@ html.light-theme-blog {
   --myself-card-shadow: rgba(189, 189, 189, 0.1);
   --stat-item-border: rgba(255, 241, 188, 0.489);
   --skill-bubble-title: rgb(234, 179, 8);
+  --skill-bubble-border: rgba(234, 178, 8, 0.627);
   /* RESUME */
   --ability-bg: rgba(92, 92, 92, 0.436);
   --ability-bg-hover: rgba(65, 65, 65, 0.274);
@@ -234,6 +238,7 @@ html.light-theme-blog {
   --myself-card-shadow: rgba(0, 0, 0, 0.1);
   --stat-item-border: rgba(221, 129, 8, 0.818);
   --skill-bubble-title: rgb(182, 87, 3);
+  --skill-bubble-border: rgba(97, 77, 15, 0.627);
   /* RESUME */
   --ability-bg: rgba(255, 255, 255, 0.375);
   --ability-bg-hover: rgba(255, 255, 255, 0.767);
@@ -318,9 +323,6 @@ html.light-theme-blog {
     rgb(54, 163, 255) 0px 0px 0px 6px, rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   --add-translation: rgb(83, 86, 97);
 }
-
-/* CUSTOM GLOBAL STYLES EVEN MORE HAHA */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap');
 
 /* ---------------------------GLOBAL BASE-------------------------- */
 /* ---------------------------GLOBAL BASE-------------------------- */
