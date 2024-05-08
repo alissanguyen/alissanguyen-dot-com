@@ -1,19 +1,10 @@
 import * as React from "react";
 import SparkleSVG from '@/components/SparkleSVG';
 import Education from './Education';
-import styles from "./Resume.css";
-import { LinksFunction } from "@remix-run/node";
 import Skills from "./Skills";
 import WorkExperience from "./WorkExperience";
 import SkillBar from "./SkillBar";
-
-
-export const links: LinksFunction = () => [
-  {
-    rel: "stylesheet",
-    href: styles
-  }
-];
+import "./Resume.css"
 
 const Resume: React.FC = ({ }) => {
   return (
