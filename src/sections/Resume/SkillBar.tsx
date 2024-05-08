@@ -65,7 +65,7 @@ const SkillBar: React.FC<Props> = ({ }) => {
         <div className="container" ref={skillsContainerRef}>
             <h1 className="title-skills text-2xl uppercase text-center Resume__BigText">Skills</h1>
             {Object.keys(skillsRef.current).map((key) => (
-                <div key={key} className="bar flex items-center my-[1em] mx-auto text-base sm:text-lg custom:text-xl">
+                <div key={key} className="bar flex flex-row gap-5 items-center my-[1em] mx-auto text-base sm:text-lg custom:text-xl">
                     <div className="skill-name text-base sm:text-lg custom:text-xl uppercase mr-6 w-24 Resume__BigText">{key.toUpperCase().replace(/\b\w/g, (c) => c.toUpperCase())}</div>
                     <div className="bar-outer relative flex-grow">
                         <div
