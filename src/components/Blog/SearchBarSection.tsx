@@ -1,9 +1,5 @@
-'use client'
-
 import * as React from "react";
 import { DocumentTextIcon } from "@heroicons/react/24/outline";
-import SubscriptionForm from "./SubscriptionForm";
-import { useTheme } from "@/providers/ThemeProvider";
 
 /*
 * TODO: Enable Subscribing to newsletter
@@ -18,7 +14,8 @@ interface Props {
 }
 
 const SearchBarSection: React.FC<Props> = (props) => {
-  const { theme } = useTheme();
+
+
   return (
     <div className="BlogPage__Header__Wrapper">
       <div className="">
@@ -45,7 +42,6 @@ const SearchBarSection: React.FC<Props> = (props) => {
             <p className="text-sm opacity-80">{props.count}</p>
           </div>
         </div>
-        {/* <SubscriptionForm subscriberEmail={props.email} setSubscriberEmail={props.setEmail} /> */}
       </div>
     </div>
   );
