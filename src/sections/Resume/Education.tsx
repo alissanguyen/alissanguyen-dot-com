@@ -46,9 +46,9 @@ const Education: React.FC<Props> = ({ }) => {
                         <span className="Education__Year Resume__MediumText text-xl font-medium sm:col-span-1">{each.year}</span>
                         <div className="flex flex-col sm:col-span-2">
                             <span className="Education__Title Resume__BigText text-xl font-bold text-textLgColor">{each.title}</span>
-                            <span className="Education__Location Resume__MediumText text-lg text-textSmColor">{each.by}</span>
+                            <span className="Education__Location Resume__MediumText text-lg text-textSmColor font-light">{each.by}</span>
                         </div>
-                        <span className="Education__Description Resume__SmallText text-lg sm:col-span-3 text-textSmColor">{each.description}</span>
+                        <span className="Education__Description Resume__SmallText text-lg sm:col-span-3 text-textSmColor font-light">{each.description}</span>
                         <div className="line-break"></div>
                     </li>
                 ))}
