@@ -85,7 +85,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                             alt="go back"
                             title="Back"
                         />
-                        Go back
+                        Back to blog
                     </a>
                     <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl font-bold max-w-[700px] mx-auto">
                         {blogPost.fields.blogPostTitle}
@@ -106,7 +106,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                     title={blogPost.fields.blogPostSplash.fields.title}
                 />
                 <div
-                    className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20`}
+                    className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20 max-w-[700px]`}
                 >
                     <div className="Translation__Section flex flex-col sm:flex-row sm:items-center self-baseline text-base sm:text-lg gap-5">
                         {blogPostTranslation.length > 1 ? (

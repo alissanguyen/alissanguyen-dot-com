@@ -4,6 +4,7 @@ import * as React from "react";
 import ShareSection from "./ShareSection";
 import ProgressBar from "./ProgressBar";
 import { BsFillArrowLeftCircleFill, BsArrowLeftCircle } from "react-icons/bs";
+import { GoHome } from "react-icons/go";
 import { SimplifiedThemeButton } from "../ThemeButton/ThemeButton";
 import "./FloatingHeader.css"
 import { NAVBAR_ID } from "@/constants";
@@ -58,22 +59,28 @@ const FloatingHeader: React.FC<Props> = (props) => {
 
   return (
     <div
-      className={`floating-header text-xl ${
-        shouldShowFloatingHeader ? "floating-active" : ""
-      }`}
+      className={`floating-header flex flex-row items-center justify-between text-xl ${shouldShowFloatingHeader ? "floating-active" : ""
+        }`}
       id="Floating__Header"
     >
-      <div className="floating-header-logo font-medium ml-4 text-post-bodyTextLg">
-        <a href="https://www.alissanguyen.com/blog">
-          {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <span className="hidden xs:flex">Alissa Nguyen's Blog</span>
-        </a>
+      <div className="hidden sm:flex flex-row items-center ">
+        <div className="floating-header-logo font-medium ml-4 text-post-bodyTextLg">
+          <a href="https://www.alissanguyen.com/blog">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <span className="hidden xs:flex">Alissa Nguyen's Blog</span>
+          </a>
+        </div>
+        <span className="floating-header-divider text-post-bodyTextLg">—</span>
+        <div className="floating-header-title font-medium">{props.postTitle}</div>
       </div>
-      <span className="floating-header-divider text-post-bodyTextLg">—</span>
-      <div className="floating-header-title font-medium">{props.postTitle}</div>
+      <a href="/">
+        <GoHome className="FloatingHeader__GoHomeSVG w-16 h-7 mr-2 ease-in-out duration-200 text-gray-500 hover:text-textSmColor" />
+      </a>
+
       <ProgressBar progress={progress} />
-      <SimplifiedThemeButton />
-      <ShareSection title={props.postTitle} slug={props.postSlug} />
+      <div className="flex flex-row items-center h-full gap-5">
+        <SimplifiedThemeButton />
+        <ShareSection title={props.postTitle} slug={props.postSlug} /></div>
     </div>
   );
 };

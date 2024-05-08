@@ -3,9 +3,6 @@ import BlogPostContainer from "@/components/Blog/BlogPostContainer";
 import { getContentfulBlogPostBySlug } from "@/contentful/contentfulClient";
 import "@/styles/blogpost.css"
 
-interface Props {
-
-}
 
 // TODO: Add MetaData
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {

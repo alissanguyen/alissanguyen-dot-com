@@ -84,7 +84,6 @@ const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
                 return searchInputRegex.test(post.fields.blogPostTitle);
             });
 
-    // TODO: Add loading state
     // TODO: Persists tags and search selection in the url
 
     return (
