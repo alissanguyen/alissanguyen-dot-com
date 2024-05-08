@@ -26,7 +26,7 @@ const FeaturedProjects: React.FC = ({ }) => {
 
         {mainProjects.map((project, index) => (
           <div
-            className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in  sm:flex sm:flex-col bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
+            className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in flex flex-col items-start justify-between h-full bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
             style={{
               backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
                 }`,
@@ -34,12 +34,12 @@ const FeaturedProjects: React.FC = ({ }) => {
             }}
             key={project.name}
           >
-            <div className="main-project-content flex flex-col justify-between">
+            <div className="main-project-content h-full flex flex-col justify-between">
               <div className="flex flex-col sm:mt-0">
                 <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
                   {project.name}
                 </p>
-                <p className="main-project-description text-base leading-8 pb-2">
+                <p className="main-project-description text-base leading-8 mb-4 font-light">
                   {project.description}
                 </p>
                 <p className="main-project-time text-sm text-projects-subText pb-2">

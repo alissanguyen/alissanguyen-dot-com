@@ -38,14 +38,12 @@ const splitTargetText = (
   startIndex: number,
   endIndex: number
 ): JSX.Element => {
-  const customStyle = {
-    color: "var(--alissa)"
-  };
+
   return (
     <>
       <span className="inline-block">{str.slice(0, startIndex)}</span>
       <span className="inline-block">
-        <span className={"custom-typewriter-text"} style={customStyle}>
+        <span className={"custom-typewriter-text gradient-text"}>
           {str.slice(startIndex, endIndex)}
         </span>
       </span>
