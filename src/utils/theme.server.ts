@@ -2,9 +2,9 @@ import { SupportedTheme } from "@/types";
 
 const THEME_KEY = "alissa_nguyen_com_theme";
 
-const sessionSecret = process.env.SESSION_SECRET;
-if (!sessionSecret) {
-  throw new Error("SESSION_SECRET must be set");
+const sessionKey = process.env.NEXT_PUBLIC_SESSION_KEY;
+if (!sessionKey) {
+  throw new Error("SESSION_KEY must be set");
 }
 
 export function getTheme(): SupportedTheme {
