@@ -36,7 +36,8 @@ const config: Config = {
         aboutMe: {
           smIconBg: "var(--sm-icon-bg)",
           aboutMeText: "var(--aboutme-text)",
-          alissa: "var(--alissa)"
+          alissa: "var(--alissa)",
+          skillTitle: "var(--skill-bubble-title)"
         },
         projects: {
           subText: "var(--project-sub-text)",
