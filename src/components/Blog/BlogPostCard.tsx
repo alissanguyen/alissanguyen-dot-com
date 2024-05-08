@@ -5,6 +5,7 @@ import BlogPostTags from "./BlogPostTags";
 import CopyURLButton from "./CopyURLButton";
 import { MdDateRange } from "react-icons/md";
 import { ContentfulBlogPost } from "@/contentful/types";
+import { tags } from "@/constants";
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
 }
@@ -67,7 +68,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
                 </p>
               </>
             </div>
-            <BlogPostTags tags={blogPostTags} />
+            {tags.length === 0 ? null : <BlogPostTags tags={blogPostTags} />}
           </div>
         </div>
       </div>
