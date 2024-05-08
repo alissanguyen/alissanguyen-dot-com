@@ -1,98 +1,95 @@
-import * as React from "react";
-import { contactFormHtmlId } from "@/constants";
-import { useTheme } from "@/providers/ThemeProvider";
-import "./Contact.css"
-import { ContactFormFieldErrors } from "@/utils/functions";
-import { AlertType, ContactFormFields, SupportedTheme } from "@/types";
-import Alert from "@/components/Alert";
+import * as React from 'react';
+import "./Contact.css";
+import emailjs from "@emailjs/browser";
+import SparkleSVG from '@/components/SparkleSVG';
 
-interface Props {
-  fieldErrors: Partial<ContactFormFieldErrors> | undefined;
-  transition: any;
-}
+interface Props { }
 
-
-const ContactMeSection: React.FC<Props> = (props) => {
-  const { fieldErrors, transition } = props;
-  const { theme } = useTheme();
-
-  const hasError = fieldErrors && Object.keys(fieldErrors).length > 0;
-  const hasSuccess = fieldErrors && Object.keys(fieldErrors).length === 0;
-
-  const errorMessageClassname = theme === SupportedTheme.DARK ? "text-[rgb(0, 255, 127)]" : "text-[rgb(255, 0, 0)]"
-
-  const buttonText =
-    transition.state === "submitting"
-      ? "Sending..."
-      : transition.state === "loading"
-        ? "Sent!"
-        : "Send";
-
-  return (
-    <div className="contact-form-wrapper">
-      <form
-        id={contactFormHtmlId}
-        method="post"
-        action="/?index"
-        className="contact-form flex flex-col text-contact-label w-full"
-      >
-        {hasError ? (
-          <Alert
-            message={"Failed to send message, please try again."}
-            type={AlertType.ERROR}
-          />
-        ) : hasSuccess ? (
-          <Alert
-            message={"I've received your message :)"}
-            type={AlertType.SUCCESS}
-          />
-        ) : (
-          <Alert
-            message={"Tell me anything! Or shoot me a message on LinkedIn!"}
-            type={AlertType.CONFIRMED}
-          />
-        )}
-        <label
-          htmlFor={ContactFormFields.email}
-          className="text-base pt-2 pb-1"
-        >
-          Your email
-        </label>
-        <input
-          id={ContactFormFields.email}
-          name={ContactFormFields.email}
-          type="email"
-          required
-          className="Form__Input rounded-lg relative block w-full px-3 py-1"
-        />
-        <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
-          <p>{fieldErrors?.email && fieldErrors?.email}</p>
+const ContactSection: React.FC<Props> = ({ }) => {
+    return (
+        <div className='contact-form-wrapper flex flex-col text-contact-label w-full' id="contact">
+            <div className='flex flex-row items-center w-fit text-lg custom3:text-2xl gap-3 font-medium rounded-3xl border-2 border-textSmColor text-textSmColor px-8 py-2 mb-5'>
+                <SparkleSVG />
+                <p>Contact</p>
+            </div>
+            <p className="ContactSection__Slogan Slogan gradient-text pb-2 leading-tight">
+                Let&apos;s make something <br></br>awesome together!
+            </p>
+            <ContactForm />
         </div>
-        <label
-          htmlFor={ContactFormFields.message}
-          className="text-textLgcolor text-base pt-2 pb-1"
-        >
-          Your message
-        </label>
-        <textarea
-          id={ContactFormFields.message}
-          name={ContactFormFields.message}
-          required
-          className="Form__Input rounded-lg relative block w-full px-3 py-1"
-        />
-        <div className={`error text-sm font-medium italic ${errorMessageClassname}`}>
-          <p>{fieldErrors?.message && fieldErrors?.message}</p>
-        </div>
-        <button
-          type="submit"
-          name="Send"
-          className="contact-btn bg-contact-send hover:bg-contact-sendHover focus:bg-contact-sendHover rounded-lg text-base mt-7 text-white py-3 w-full"
-        >
-          {buttonText}
-        </button>
-      </form>
-    </div>
-  );
+    );
 };
 
-export default ContactMeSection;
+export default ContactSection;
+
+interface ContactFormProps { }
+
+const ContactForm: React.FC<ContactFormProps> = ({ }) => {
+
+    const EMAILJS_KEY = process.env.NEXT_PUBLIC_EMAILJS_KEY;
+
+    const [formData, setFormData] = React.useState({
+        service_id: 'service_q7qz7n8',
+        template_id: 'template_9tmyq5i',
+        user_id: EMAILJS_KEY,
+        template_params: {
+            name: '',
+            email: '',
+            message: '',
+        },
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({
+            ...formData,
+            template_params: {
+                ...formData.template_params,
+                [e.target.name]: e.target.value,
+            },
+        });
+    };
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        // Validate the message field
+        if (!formData.template_params.message.match(/^(?!.*<script>)(?!.*<\/script>)(?!.*<iframe>)(?!.*<\/iframe>)(?!.*<embed>)(?!.*<\/embed>)(?!.*<object>)(?!.*<\/object>)(?!.*<applet>)(?!.*<\/applet>)(?!.*<style>)(?!.*<\/style>)(?!.*<link>)(?!.*<\/link>)(?!.*<meta>)(?!.*<\/meta>).*$/)) {
+            alert('Please enter a valid message without any HTML tags.');
+            return;
+        }
+
+        emailjs
+            .send(formData.service_id, formData.template_id, formData.template_params, { publicKey: EMAILJS_KEY })
+            .then((response) => {
+                console.log('Email sent successfully!', response);
+                alert('Your mail is sent!');
+            })
+            .catch((error) => {
+                console.error('Error sending email:', error);
+                alert('Oops... ' + JSON.stringify(error));
+            });
+    };
+
+
+    return (
+        <div className="login-box w-full text-dark-textPrimary mt-5">
+            <form onSubmit={handleSubmit}>
+                <div className="user-box relative">
+                    <input type="text" id="name" className="w-full custom2:w-1/2 text-base" name="name" required={true} pattern="^[a-zA-Z\s]+$" title="Name should only contain letters and spaces" onChange={handleChange} />
+                    <label htmlFor="name">Your Name *</label>
+                </div>
+                <div className="user-box relative">
+                    <input type="email" className="w-full custom2:w-1/2 text-base" id="email" name="email" required={true} pattern="^[A-Za-z0-9._\%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Please enter a valid email address" onChange={handleChange} />
+                    <label htmlFor="email">Email Address *</label>
+                </div>
+                <div className="user-box relative">
+                    <textarea name="message" className="w-full custom2:w-[80%] text-base" id="message" required={true} onChange={handleChange} />
+                    <label htmlFor="message">A Few Words *</label>
+                </div>
+                <div className='wrap'>
+                    <button type="submit" className='btn-0 text-lg px-10 py-4'>Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+};

@@ -1,40 +1,72 @@
-/* ---------------------------CONTACT SECTION-------------------------- */
-/* ---------------------------CONTACT SECTION-------------------------- */
-/* ---------------------------CONTACT SECTION-------------------------- */
-/* ---------------------------CONTACT SECTION-------------------------- */
-/* ---------------------------CONTACT SECTION-------------------------- */
-/* ---------------------------CONTACT SECTION-------------------------- */
 
-/* CONTACT FORM */
-.contact-form {
-  padding: 1rem;
-  background: var(--form-bg);
-  box-shadow: var(--form-shadow);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: var(--form-border);
-}
-.Form__Input {
-  border: var(--input-border);
-}
-
-.contact-form > input {
-  font-size: 16px;
+.login-box .user-box input, .login-box .user-box textarea {
+  padding: 5px 0;
+  color: var(--base01);
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid var(--base01);
+  outline: none;
   background: transparent;
-  backdrop-filter: blur(6px);
-  box-shadow: var(--input-shadow);
-  color: var(--input-text);
-}
-
-.contact-form > textarea {
+  }
+  
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 10px 0;
   font-size: 16px;
-  background: transparent;
-  backdrop-filter: blur(5px);
-  box-shadow: var(--input-shadow);
-  color: var(--input-text);
+  pointer-events: none;
+  transition: .5s;
 }
 
-.error {
-  font-family: system-ui;
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label,
+.login-box .user-box textarea:focus ~ label,
+.login-box .user-box textarea:valid ~ label {
+  top: -30px;
+  left: 0;
+  color: var(--text-large-color);
+  font-size: 12px;
+}
+
+
+.btn-0 {
+  text-decoration: none;
+}
+
+
+[class^="btn-"] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  max-width: 200px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.btn-0 {
+  color: var(--text-large-color);
+  border: none;
+  transition: color 0.5s ease-in-out;
+}
+
+.btn-0:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--text-large-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.btn-0:hover {
+  color: var(--base00);
+}
+
+.btn-0:hover:before {
+  transform: translateX(0);
 }
