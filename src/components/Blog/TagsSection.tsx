@@ -13,6 +13,10 @@ interface Props {
 
 const TagsSection: React.FC<Props> = (props) => {
   const { theme } = useTheme();
+
+  const handleTagSelect = (tagId: string) => {
+    props.onTagSelect(tagId);
+  };
   return (
     <div className="Tags__Wrapper my-16 text-blog-lgText">
       <p className="BlogPage__SubHeader text-xl mb-4 font-bold">
@@ -26,9 +30,7 @@ const TagsSection: React.FC<Props> = (props) => {
             tagId={tag.sys.id}
             theme={theme}
             selected={props.selectedTags.has(tag.sys.id)}
-            onClick={() => {
-              props.onTagSelect(tag.sys.id);
-            }}
+            onClick={handleTagSelect}
             disabled={!props.availableTags.has(tag.sys.id)}
           />
         ))}
@@ -59,9 +61,8 @@ const TagBadge: React.FC<TagBadgeProps> = (props) => {
     <button
       name={"Filter for" + props.tag}
       aria-label={props.tag}
-      className={`mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex ${
-        props.selected ? selectedClassName : "bg-blog-tagBg"
-      } ${props.disabled ? disabledClassName : "focus-ring"}`}
+      className={`mb-4 mr-4 h-auto w-auto cursor-pointer rounded-full px-6 py-3 transition flex ${props.selected ? selectedClassName : "bg-blog-tagBg"
+        } ${props.disabled ? disabledClassName : "focus-ring"}`}
       onClick={() => props.onClick(props.tagId)}
       disabled={props.disabled}
     >
