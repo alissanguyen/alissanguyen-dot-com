@@ -126,7 +126,7 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
           <span className="AboutMe__StatDescription">Projects done</span>
         </div>
         <div className="AboutMe__StatItem">
-          <span className="AboutMe__StatNumber gradient-text">1,250+</span>
+          <span className="AboutMe__StatNumber gradient-text">2,000+</span>
           <span className="AboutMe__StatDescription">GitHub contributions</span>
         </div>
       </div>
