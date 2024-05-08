@@ -5,7 +5,43 @@ import ResumeButton from "@/components/ResumeButton/ResumeButton";
 import SocialMedia from "@/components/SocialMedia/SocialMedia";
 import SparkleSVG from "@/components/SparkleSVG";
 import "./AboutMe.css"
+import EclipseSrc from "../../../public/assets/images/background/Eclipse.svg"
+import AvatarImageSrc from "../../../public/assets/aboutme/avatar.jpeg"
+import GradientImageSrc from "../../../public/assets/images/background/Gradient.svg"
+import FrontEndImage from "../../../public/assets/aboutme/front-end.png"
+import WebHostingImage from "../../../public/assets/aboutme/web-hosting.png"
+import DatabaseManagementImage from "../../../public/assets/aboutme/database-management.png"
+import CMSImage from "../../../public/assets/aboutme/cms.png"
 
+import Image from "next/image";
+
+
+const skills = [
+  {
+    id: "fe",
+    title: "Front-end development",
+    description: "Responsive and performant web pages with React or Remix, with and SSR for a better user experience. Utilize modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly.",
+    imageSrc: FrontEndImage
+  },
+  {
+    id: "wbd",
+    title: "Web hosting and deployment",
+    description: "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge. Writing easily understood, modular, fast, and type-safe applications with TypeScript and modern JavaScript syntax.",
+    imageSrc: WebHostingImage
+  },
+  {
+    id: "dm",
+    title: "Database management",
+    description: "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
+    imageSrc: DatabaseManagementImage
+  },
+  {
+    id: "cms",
+    title: "CMS integration",
+    description: "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful.",
+    imageSrc: CMSImage
+  }
+]
 const AboutMe: React.FC<React.PropsWithChildren> = () => {
 
   return (
@@ -13,19 +49,19 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
       <article className="aboutme-wrapper mt-[35%] xs:mt-[25%] md:mt-[15%] flex flex-row gap-5 lg:gap-10 relative">
         <div className="Introduction__Wrapper grid grid-cols-1 custom:grid-cols-7 gap-5" id="introductionWrapper">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="assets/images/background/Eclipse.svg"
+          <Image
+            src={EclipseSrc}
             alt="Decorative background eclipse"
             className="eclipse absolute left-[-40rem] top-[2rem] z-[-10]"
           />
           <div className="flex flex-col custom:col-span-4">
             <Hi />
             <div className="bio-description md:text-lg leading-10 text-textSmColor">
-              <div className="my-10 text-lg xl:text-xl">
+              <div className="my-10 text-lg xl:text-xl font-light">
                 <p className="my-4">
                   Welcome to my personal website!
                 </p>
-                <p className="mb-5 xs:mb-10">
+                <p className="mb-5 xs:mb-10 font-light">
                   {/* eslint-disable-next-line react/no-unescaped-entities */}
                   I enjoy building software that makes people' lives easier
                   by writing elegant, performant, and maintainable frontend
@@ -43,7 +79,7 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
 
           </div>
           <div className="hidden custom:flex custom:col-span-3 custom:px-5 xl:px-10">
-            <img src="/assets/aboutme/avatar.jpeg" alt="" className="Avatar" />
+            <Image src={AvatarImageSrc} alt="avatar" className="Avatar" />
           </div>
 
         </div>
@@ -51,7 +87,7 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
         <SocialMedia />
       </article>
       <div className="visible custom:hidden">
-        <img src="/assets/aboutme/avatar.jpeg" alt="" className="Avatar" />
+      <Image src={AvatarImageSrc} alt="avatar" className="Avatar" />
       </div>
 
       <div className="spacer-div mt-40"></div>
@@ -63,52 +99,27 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
 export default AboutMe;
 
 
-const skills = [
-  {
-    id: "fe",
-    title: "Front-end development",
-    description: "Responsive and performant web pages with React or Remix, with and SSR for a better user experience. Utilize modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly.",
-    imageSrc: "/assets/aboutme/front-end.png"
-  },
-  {
-    id: "wbd",
-    title: "Web hosting and deployment",
-    description: "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge. Writing easily understood, modular, fast, and type-safe applications with TypeScript and modern JavaScript syntax.",
-    imageSrc: "/assets/aboutme/web-hosting.png"
-  },
-  {
-    id: "dm",
-    title: "Database management",
-    description: "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
-    imageSrc: "/assets/aboutme/database-management.png"
-  },
-  {
-    id: "cms",
-    title: "CMS integration",
-    description: "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful.",
-    imageSrc: "/assets/aboutme/cms.png"
-  }
-]
+
 
 const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
   return (
     <div>
 
-      <div className='flex flex-row items-center w-fit text-lg custom3:text-2xl gap-3 font-medium rounded-3xl border-2 border-gray-300 text-textSmColor px-8 py-2 mb-5'>
+      <div className='flex flex-row items-center w-fit text-lg custom3:text-2xl gap-3 font-medium rounded-3xl border-2 border-textSmColor text-textSmColor px-8 py-2 mb-5'>
         <SparkleSVG />
         <h2>About Me</h2>
 
       </div>
       <p className="Slogan AboutMe__Slogan gradient-text">Turning complex problems <br></br> into simple design</p>
       <div className="AboutMe__StatsWrapper flex flex-col sm:flex-row items-center w-full gap-5 text-textSmColor Special__Font mb-5 text-center mt-6">
-        <img
-          src="assets/images/background/Gradient.svg"
+        <Image
+          src={GradientImageSrc}
           alt="Decorative background"
           className="gradient-blob absolute opacity-60"
         />
         <div className="AboutMe__StatItem">
           <span className="AboutMe__StatNumber gradient-text">4+</span>
-          <span className="AboutMe__StatDescription">Years of experience</span>
+          <span className="AboutMe__StatDescription font-semibold">Years of experience</span>
         </div>
         <div className="AboutMe__StatItem">
           <span className="AboutMe__StatNumber gradient-text">50+</span>
@@ -120,26 +131,26 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
         </div>
       </div>
       <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 custom:gap-20">
-        <div className='flex flex-col items-start gap-3 sm:gap-7'>
-          <p className="AboutMe__Text text-lg custom:text-xl font-medium text-subText leading-relaxed tracking-wide">I had my awakening call recently, and it made me wonder who I am. I woke up one morning and everything seems unfamiliar. I noticed that I have never taken a good look at Seattle. I did not notice that pizzaria in the corner near the street where I live. I did not notice how many different varieties of trees there are throughout the city. I did not notice that tall building with floor to ceiling windows near the entrance to I-5. I did not notice how blue the sky was. &quot;Where am I? Who in the world am I?&quot;</p>
+        <div className='flex flex-col items-start gap-3 sm:gap-7 font-light'>
+          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">I had my awakening call recently, and it made me wonder who I am. I woke up one morning and everything seems unfamiliar. I noticed that I have never taken a good look at Seattle. I did not notice that pizzaria in the corner near the street where I live. I did not notice how many different varieties of trees there are throughout the city. I did not notice that tall building with floor to ceiling windows near the entrance to I-5. I did not notice how blue the sky was. &quot;Where am I? Who in the world am I?&quot;</p>
 
-          <p className="AboutMe__Text text-lg custom:text-xl font-medium text-subText leading-relaxed tracking-wide">Life has many great puzzles, but the greatest of them all (in my opinion) is the riddle of figuring out who we are, and why we are here. Life has many struggles, but the greatest of them all is to not lose yourself in the process of finding yourself. At the end of the day, I&lsquo;m grateful that I&lsquo;m here, in this moment, and tomorrow I will be a better person than today.</p>
+          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">Life has many great puzzles, but the greatest of them all (in my opinion) is the riddle of figuring out who we are, and why we are here. Life has many struggles, but the greatest of them all is to not lose yourself in the process of finding yourself. At the end of the day, I&lsquo;m grateful that I&lsquo;m here, in this moment, and tomorrow I will be a better person than today.</p>
           <p className="AboutMe__Text text-lg custom3:text-xl custom:text-2xl font-normal text-textLgColor italic leading-relaxed tracking-wide">I believe one of the greatest ability of humans is the ability to introspect and reflect.</p>
         </div>
         <div className='flex flex-col items-start gap-3 sm:gap-6 text-lg custom:text-xl text-textSmColor'>
-          <div className="flex flex-col items-start">
-            <span className="text-subText">Name</span>
-            <span className="font-semibold">Tam Nguyen</span>
+          <div className="flex flex-col items-start leading-7">
+            <span className="text-subText font-light">Name</span>
+            <span className="font-seminbold">Tam Nguyen</span>
             <span className="font-semibold">Nickname: Alissa / Avione</span>
           </div>
 
           <div className="flex flex-col items-start">
-            <span className="text-subText">Phone</span>
+            <span className="text-subText font-light">Phone</span>
             <span className="font-semibold">(425) 728-0312</span>
           </div>
 
           <div className="flex flex-col items-start">
-            <span className="text-subText">Email</span>
+            <span className="text-subText font-light">Email</span>
             <span className="font-semibold">im.tamnguyen@gmail.com</span>
           </div>
 
@@ -157,12 +168,12 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
           <li key={skill.id} className="AboutMe__SkillBubble relative flex flex-col items-start overflow-hidden border-2 rounded-3xl md:rounded-[3rem] pt-7 px-7 md:pt-12 md:px-12 pb-0 max-h-[44rem]">
 
             <div className="AboutMe__SkillBubble__Content relative z-[1]">
-              <p className="AboutMe__SkillBubble__Title font-semibold text-2xl md:text-3xl mb-2">{skill.title}</p>
-              <p className='md:font-medium text-lg md:text-xl text-textSmColor'>{skill.description}</p>
+              <p className="AboutMe__SkillBubble__Title text-aboutMe-skillTitle font-semibold text-2xl md:text-3xl mb-2">{skill.title}</p>
+              <p className='font-light text-lg md:text-xl text-textSmColor'>{skill.description}</p>
             </div>
             <div className="AboutMe__SkillBubble__ImageWrapper w-full overflow-hidden">
               {skill.imageSrc ? (
-                <img
+                <Image
                   src={skill.imageSrc}
                   alt={skill.title}
                   className="AboutMe__SkillBubble__Image w-full h-auto block"

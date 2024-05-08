@@ -1,6 +1,7 @@
 import * as React from "react";
 import ExternalLinkButton from "@/components/ExternalLinkButton/ExternalLinkButton";
 import { otherProjects } from "@/constants";
+import Image from "next/image";
 
 const OtherProjects: React.FC = ({ }) => {
   return (
@@ -14,7 +15,7 @@ const OtherProjects: React.FC = ({ }) => {
             key={project.name}
           >
             <div className="info inline-flex items-center md:w-48 md:mr-5 custom:mr-0 custom:w-64 mb-5 md:mb-0">
-              <img
+              <Image
                 src={project.iconSrc}
                 alt={project.name}
                 loading="lazy"
@@ -23,7 +24,7 @@ const OtherProjects: React.FC = ({ }) => {
               />
               <p className="font-medium text-lg">{project.name}</p>
             </div>
-            <span className="md:flex-1 text-base text-center w-full xxs:w-4/5 xs:w-2/3 md:w-full md:text-left">
+            <span className="md:flex-1 text-base text-center w-full xxs:w-4/5 xs:w-2/3 md:w-full md:text-left font-light">
               {project.description}
             </span>
             <div className="inline-flex items-center mt-5 md:mt-0 md:ml-5 custom:ml-0">
