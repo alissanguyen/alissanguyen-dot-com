@@ -2,11 +2,13 @@
 import { EatLearnCode, GradientBackground3 } from "@/components/Decoration";
 import { fixedWidthLayoutClasses } from "@/constants";
 import AboutMe from "@/sections/AboutMe/AboutMe";
+import ContactMeSection from "@/sections/Contact/Contact";
 import Projects from "@/sections/Projects/Projects";
 import Portfolio from "@/sections/Resume/Portfolio";
 import Resume from "@/sections/Resume/Resume";
 
 export default function Home() {
+
   return (
     <>
       <div className="app tracking-wide text-lg">
@@ -27,7 +29,7 @@ export default function Home() {
           </section>
           <div className="spacer-div mt-24"></div>
           <div className="spacer-div mt-10"></div>
-          {/* <ContactMeSection fieldErrors={actionData?.fieldErrors} transition={transition} /> */}
+          <ContactMeSection/>
           <div className="spacer-div mt-40"></div>
         </div>
       </div>

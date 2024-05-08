@@ -28,7 +28,7 @@ const Navbar: React.FC<NavBarProps> = (props) => {
 
       >
         <nav className="NavBar__Wrapper max-w-screen-lg flex flex-row relative" >
-          <div className="NavBar__InnerWrapper fixed top-[2rem] bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl rounded-lg left-[0] xl:left-auto pl-8 sm:pl-12 pb-15 pr-5 xl:px-0 p-4 lg:p-0 lg:pl-5" style={{
+          <div className="NavBar__InnerWrapper fixed top-[2rem] bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl rounded-lg left-[0] xl:left-auto pl-8 sm:pl-12 pb-15 pr-5 xl:px-0 p-8 lg:p-0 lg:pl-5" style={{
             backgroundColor: `rgba(107, 107, 107, ${props.navbarOpacity})`,
             backdropFilter: `blur(${props.navbarOpacity * 50}px)`,
           }}>
