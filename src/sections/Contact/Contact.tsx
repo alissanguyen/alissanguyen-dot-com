@@ -53,8 +53,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
         e.preventDefault();
 
         // Validate the message field
+        if (typeof formData.template_params.message !== "string") {
+            alert("Your message is not a string.");
+            return;
+        }
+
         if (!formData.template_params.message.match(/^(?!.*<script>)(?!.*<\/script>)(?!.*<iframe>)(?!.*<\/iframe>)(?!.*<embed>)(?!.*<\/embed>)(?!.*<object>)(?!.*<\/object>)(?!.*<applet>)(?!.*<\/applet>)(?!.*<style>)(?!.*<\/style>)(?!.*<link>)(?!.*<\/link>)(?!.*<meta>)(?!.*<\/meta>).*$/)) {
-            alert('Please enter a valid message without any HTML tags.');
+            alert("Please enter a valid message without any HTML tags.");
+            return;
+        }
+
+        const transformedMsg = formData.template_params.message.toLowerCase();
+        if (
+            transformedMsg.includes(" bot ") ||
+            transformedMsg.includes("bot ") ||
+            transformedMsg.includes(" money ") ||
+            transformedMsg.includes(" rich ") ||
+            transformedMsg.includes("crypto") ||
+            transformedMsg.includes("robot ") ||
+            transformedMsg.includes(" robot ")
+        ) {
+            alert("Your activity is unusual, please try again or contact me through Linkedin.");
+            return;
+        }
+
+        if (formData.template_params.message.length < 10) {
+            alert("Message must be at least 10 characters.");
             return;
         }
 

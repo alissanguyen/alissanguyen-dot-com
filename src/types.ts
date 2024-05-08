@@ -13,19 +13,3 @@ export enum SupportedTheme {
   LIGHT = "light"
 }
 
-export enum ContactFormFields {
-  email = "email",
-  name = "name",
-  subject = "subject",
-  message = "message"
-}
-
-export type Message = {
-  message: string;
-  email: string;
-};
-
-export enum SubscribeFormField {
-  email = "email"
-}
-
