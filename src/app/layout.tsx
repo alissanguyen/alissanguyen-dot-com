@@ -6,8 +6,10 @@ import Footer from '@/components/Footer/Footer';
 import { usePathname } from 'next/navigation';
 import { SupportedTheme } from '@/types';
 import { ThemeContextProvider, useTheme } from '@/providers/ThemeProvider';
-import "./globals.css"
+import "../styles/globals.css"
 import { ModalContextProvider } from '@/providers/ModalProvider';
+import { getTheme } from '@/utils/theme.server';
+import { AUTHOR, BLOG_DESCRIPTION, BLOG_IMAGE_URL, BLOG_KEYWORDS, BLOG_URL, BLOG_WEBSITE_NAME, fixedWidthLayoutClasses, IMAGE_HEIGHT, IMAGE_WIDTH, NAVBAR_ID, TWITTER_ACC, TWITTER_CARD_TYPE } from '@/constants';
 
 const convertSupportedThemeToClassName = (
   theme: SupportedTheme,
@@ -27,7 +29,19 @@ const convertSupportedThemeToClassName = (
 };
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
+
+  const pathname = usePathname();
+  const isOnBlogRoute = pathname.startsWith('/blog');
+  const isOnSlugRoute = pathname.startsWith('/blog/');
+
+  const [theme, setTheme] = useState<SupportedTheme>(SupportedTheme.DARK);
+
   const [navbarOpacity, setNavbarOpacity] = useState(0);
+
+  useEffect(() => {
+    const storedTheme = getTheme();
+    setTheme(storedTheme);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,11 +73,12 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
     };
   }, []);
 
+  // TODO: Fix metadata not rendering
   return (
-    <ThemeContextProvider initialTheme={SupportedTheme.DARK}>
+    <ThemeContextProvider initialTheme={theme}>
       <ModalContextProvider>
         <ThemeSetter>
-          <Head>
+          {!isOnBlogRoute ? (<Head>
             <meta charSet="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>Alissa Nguyen</title>
@@ -71,8 +86,29 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
             <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
             <link rel="manifest" href="/site.webmanifest" />
-          </Head>
-
+          </Head>) : (
+            <Head>
+              <title>{BLOG_WEBSITE_NAME}</title>
+              <meta name="description" content={BLOG_DESCRIPTION} />
+              <meta name="keywords" content={BLOG_KEYWORDS} />
+              <meta property="og:title" content={BLOG_WEBSITE_NAME} />
+              <meta property="og:description" content={BLOG_DESCRIPTION} />
+              <meta property="og:url" content={BLOG_URL} />
+              <meta property="og:image" content={BLOG_IMAGE_URL} />
+              <meta property="og:image:width" content={IMAGE_WIDTH} />
+              <meta property="og:image:height" content={IMAGE_HEIGHT} />
+              <meta property="og:image:alt" content={BLOG_WEBSITE_NAME} />
+              <meta name="twitter:title" content={BLOG_WEBSITE_NAME} />
+              <meta name="twitter:description" content={BLOG_DESCRIPTION} />
+              <meta name="twitter:card" content={TWITTER_CARD_TYPE} />
+              <meta name="twitter:creator" content={TWITTER_ACC} />
+              <meta name="twitter:site" content={TWITTER_ACC} />
+              <meta name="twitter:image" content={BLOG_IMAGE_URL} />
+              <meta name="twitter:image:alt" content={BLOG_WEBSITE_NAME} />
+              <meta name="theme-color" content="#212529" />
+              <link rel="author" href={AUTHOR} />
+            </Head>
+          )}
           <body id="root">
             <script
               async
@@ -91,7 +127,7 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
                 </p>
               </div>
             </noscript>
-            <NavBar navbarOpacity={navbarOpacity} />
+            {isOnSlugRoute ? (<div className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"} id={NAVBAR_ID}></div>) : <NavBar navbarOpacity={navbarOpacity} />}
             <div className="Document__Content screen-body">{children}</div>
             <Footer />
           </body>
@@ -118,3 +154,5 @@ const ThemeSetter = (props: React.PropsWithChildren) => {
 }
 
 export default Layout;
+
+
