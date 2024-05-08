@@ -4,6 +4,11 @@ import "./ThemeButton.css"
 import { SupportedTheme } from "@/types";
 import { useTheme } from "@/providers/ThemeProvider";
 import { useModalContext } from "@/providers/ModalProvider";
+import MoonIconImage from "../../../public/assets/svg/moon.svg"
+import MobileMoonIconImage from "../../../public/assets/svg/moon-blog.svg"
+import SunIcon from "../../../public/assets/svg/sun.svg"
+import MobileSunIcon from "../../../public/assets/svg/mobileSun.svg"
+
 import Image from "next/image";
 
 const getClassName = (theme: SupportedTheme) => {
@@ -11,12 +16,10 @@ const getClassName = (theme: SupportedTheme) => {
     ? "border-2 border-gray-400 hover:border-black"
     : "border-2 border-gray-400 hover:border-white";
 };
-const mobileSun = "assets/svg/mobileSun.svg";
 
 const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
   const { theme, updateTheme } = useTheme();
   const { modalIsOpen } = useModalContext();
-  const sun = "assets/svg/sun.svg";
   const className = getClassName(theme);
 
   const handleToggleTheme = (oldTheme: SupportedTheme) => {
@@ -55,9 +58,9 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
             onClick={() => toggleTheme(theme)}
           >
             {theme === SupportedTheme.LIGHT ? (
-              <img
-                className="theme-icon select-none"
-                src={sun}
+              <Image
+                className="theme-icon select-none w-8"
+                src={SunIcon}
                 alt="Sun icon"
                 title="Sun"
               />
@@ -75,9 +78,9 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
           >
             {theme === SupportedTheme.LIGHT ? (
               <div className="inline-flex items-center justify-center text-base">
-                <img
+                <Image
                   className="theme-icon select-none mr-4 w-5"
-                  src={mobileSun}
+                  src={MobileSunIcon}
                   alt="Sun icon"
                   title="Sun"
                 />
@@ -85,8 +88,8 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
               </div>
             ) : (
               <div className="inline-flex items-center justify-center text-base">
-                <img
-                  src="assets/svg/moon-blog.svg"
+                <Image
+                  src={MobileMoonIconImage}
                   alt="Moon icon"
                   title="Moon"
                   className="theme-icon flex items-center m-auto justify-center w-5 select-none"
@@ -106,12 +109,10 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
 interface MoonIconProps {
 }
 const MoonIcon: React.FC<MoonIconProps> = (props) => (
-  <img
-    src={"assets/svg/moon.svg"}
+  <Image
+    src={MoonIconImage}
     alt="Moon icon"
     title="Moon"
-    width={10}
-    height={10}
     className="theme-icon flex items-center m-auto justify-center w-8 select-none"
   />
 );
