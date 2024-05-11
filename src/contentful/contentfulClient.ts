@@ -11,10 +11,6 @@ const CONTENTFUL_SECRET_API_KEY = z
   })
   .parse(process.env.CONTENTFUL_SECRET_API_KEY);
 
-  /**
-   * 
-   * @returns 
-   */
 
 const getGlobalContentfulClient = () => {
   if (!GLOBAL_CONTENTFUL_CLIENT) {
@@ -56,7 +52,7 @@ export const getContentfulBlogPosts = async () => {
     order: "-sys.updatedAt"
   });
 
-  return queryResults as EntryCollection<ContentfulBlogPost>;
+  return queryResults.items as Entry<ContentfulBlogPost>[];
 };
 
 // Get back all tags from contentful
@@ -67,7 +63,9 @@ export const getContentfulTags = async () => {
       return response;
     });
 
-  return queryResults;
+  const value = (queryResults.toPlainObject() as any).items;
+
+  return value;
 };
 
 // Get back all entries with matching tag --- Currently unused, should consider removing this function
