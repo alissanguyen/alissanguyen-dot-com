@@ -11,17 +11,43 @@ import { SupportedTheme } from "@/types";
 import "./NavBar.css"
 import NavLink from "./NavLink";
 
-interface NavBarProps {
-  navbarOpacity: number
-}
+const Navbar: React.FC = (props) => {
 
-const Navbar: React.FC<NavBarProps> = (props) => {
   const pathname = usePathname();
   const { theme } = useTheme();
   const currentTopLevelRoute = pathname;
+  const isOnSlugRoute = pathname.startsWith('/blog/');
+
+  const [navbarOpacity, setNavbarOpacity] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const newOpacity = Math.min(scrollPosition / 100, 0.3);
+      setNavbarOpacity(newOpacity);
+      // Save the scroll position to localStorage
+      localStorage.setItem('scrollPosition', scrollPosition.toString());
+    };
+
+    // Check if there is a stored scroll position in localStorage
+    const savedScrollPosition = localStorage.getItem('scrollPosition');
+    if (savedScrollPosition) {
+      const scrollPosition = parseInt(savedScrollPosition);
+      window.scrollTo(0, scrollPosition);
+      // Calculate the initial opacity based on the stored scroll position
+      const initialOpacity = Math.min(scrollPosition / 100, 0.8);
+      setNavbarOpacity(initialOpacity);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <>
+    isOnSlugRoute ? (<div className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"} id={NAVBAR_ID} ></div >) : (<>
       <div
         className={fixedWidthLayoutClasses + " mb-10 md:mb-16 lg:mb-20"}
         id={NAVBAR_ID}
@@ -29,8 +55,8 @@ const Navbar: React.FC<NavBarProps> = (props) => {
       >
         <nav className="NavBar__Wrapper max-w-screen-lg flex flex-row relative" >
           <div className="NavBar__InnerWrapper fixed top-[2rem] bg-blue-10 z-[100] flex flex-row gap-40 items-center justify-between w-full max-w-screen-xl rounded-lg left-[0] xl:left-auto pl-8 sm:pl-12 pb-15 pr-5 xl:px-0 p-8 lg:p-0 lg:pl-5" style={{
-            backgroundColor: `rgba(107, 107, 107, ${props.navbarOpacity})`,
-            backdropFilter: `blur(${props.navbarOpacity * 50}px)`,
+            backgroundColor: `rgba(107, 107, 107, ${navbarOpacity})`,
+            backdropFilter: `blur(${navbarOpacity * 50}px)`,
           }}>
             <div>
               <NavLogo
@@ -77,9 +103,10 @@ const Navbar: React.FC<NavBarProps> = (props) => {
           </div>
         </nav>
       </div>
-    </>
-  );
-};
+    </>))
+}
+
+
 
 const getIsActiveRoute = (href: string, currentTopLevelRoute: string) => {
 
