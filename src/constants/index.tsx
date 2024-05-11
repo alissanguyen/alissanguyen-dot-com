@@ -33,29 +33,6 @@ import TailwindIcon from "../../public/assets/images/tech/tailwindcss.svg";
 import NPMIcon from "../../public/assets/images/tech/npm.svg";
 import NetlifyIcon from "../../public/assets/images/tech/netlify.svg";
 
-export const IMAGE_WIDTH = "1200";
-export const IMAGE_HEIGHT = "630";
-export const PORTFOLIO_WEBSITE_NAME = "Alissa Nguyen";
-export const BLOG_WEBSITE_NAME = "Alissa Nguyen's Blog";
-export const TWITTER_CARD_TYPE = "summary_large_image";
-export const AUTHOR = "Alissa Nguyen";
-export const WEBSITE_URL = "https://www.alissanguyen.com/";
-export const BLOG_URL = "https://www.alissanguyen.com/blog";
-export const TWITTER_ACC = "@ai_alissa";
-export const TWITTER_PUBLISHER = "https://twitter.com/ai_alissa";
-export const WEBSITE_KEYWORDS =
-  "Learn Remix, React, JavaScript, Typescript, Alissa Nguyen Blog, Alissa Nguyen, Software Development, Software Engineer, Modern Programing, Frontend Engineer, Web Developer, AlissaNguyen";
-export const BLOG_KEYWORDS =
-  "Learn Remix, React, JavaScript, Typescript, Personal Blog, Technical Blog, Alissa Nguyen, Alissa Nguyen Blog, Software Development, Developer, Software Engineer, Modern Programing, Frontend Programmer, Web Developer";
-export const WEBSITE_DESCRIPTION =
-  "Hi, I'm Alissa. I'm a software engineer in Seattle, WA. I enjoy building software with elegant, performant, and maintainable frontend code.";
-export const BLOG_DESCRIPTION =
-  "Hi, I'm Alissa. I write blog about what I know and tutorials for Remix, React, web development and more.";
-export const PORTFOLIO_IMAGE_URL =
-  "https://www.alissanguyen.com/images/preview.jpg";
-export const BLOG_IMAGE_URL =
-  "https://www.alissanguyen.com/images/blogpreview.jpg";
-
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
     href: "/",
@@ -107,7 +84,7 @@ interface SocialMediaIconData {
   icon: React.FC;
   externalUrl: string;
 }
-export const sm: SocialMediaIconData[] = [
+export const SOCIAL_MEDIA_METADATA: SocialMediaIconData[] = [
   {
     name: "Facebook",
     className: "icon facebook text-black hover:text-white",
@@ -152,7 +129,7 @@ export const tags = [
   { id: "personal", name: "personal" }, //8
   { id: "react", name: "react" }, //9
   { id: "remix", name: "remix" }, //10
-  { id: "pytorch", name: "pytorch" }, 
+  { id: "pytorch", name: "pytorch" },
   { id: "git", name: "git" }, //12
   { id: "resources", name: "resources" }, //13
   { id: "testing", name: "testing" }, //14

@@ -1,6 +1,6 @@
 'use client'
 import * as React from "react";
-import { sm } from "@/constants";
+import { SOCIAL_MEDIA_METADATA } from "@/constants";
 import { useTheme } from "@/providers/ThemeProvider";
 import "./SocialMedia.css"
 import { SupportedTheme } from "@/types";
@@ -10,7 +10,7 @@ const SocialMedia: React.FC<React.PropsWithChildren> = ({ }) => {
   const styles = getTextStyles(theme);
   return (
     <div className="sm-wrapper flex flex-col gap-4">
-      {sm.map((element) => {
+      {SOCIAL_MEDIA_METADATA.map((element) => {
         const IconMarkup = element.icon;
 
         return (
