@@ -1,7 +1,7 @@
 'use client'
 import * as React from "react";
 import ThemeButton from "../ThemeButton/ThemeButton";
-import { fixedWidthLayoutClasses, NAVBAR_ID, topLevelLinksOnDesktop } from "@/constants";
+import { NAVBAR_ID, topLevelLinksOnDesktop } from "@/constants";
 import MobileMenu from "./MobileMenu";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/providers/ThemeProvider";
@@ -19,14 +19,14 @@ const Navbar: React.FC = (props) => {
   const isOnSlugRoute = pathname.startsWith('/blog/');
 
   const [navbarStyle, setNavbarStyle] = React.useState({
-    borderBottom: 'solid 2px var(--base01)',
+    borderBottom: 'none',
     backgroundColor: 'var(--background-nav)',
   });
 
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      if (scrollPosition > 50) {
+      if (scrollPosition > 100) {
         setNavbarStyle({
           borderBottom: 'solid 2px var(--base01)',
           backgroundColor: 'var(--background-nav)',
