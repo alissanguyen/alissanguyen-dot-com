@@ -48,10 +48,10 @@ const Navbar: React.FC = (props) => {
       const scrollPosition = parseInt(savedScrollPosition);
       window.scrollTo(0, scrollPosition);
       // Set the initial navbar style based on the stored scroll position
-      if (scrollPosition > 50) {
+      if (scrollPosition > 100) {
         setNavbarStyle({
-          borderBottom: '1px solid gray',
-          backgroundColor: 'white',
+          borderBottom: 'solid 2px var(--base01)',
+          backgroundColor: 'var(--background-nav)',
         });
       }
     }
@@ -72,8 +72,8 @@ const Navbar: React.FC = (props) => {
 
       >
         <nav className="NavBar__Wrapper flex flex-row relative"  >
-          <div className="NavBar__InnerWrapper fixed z-[100] flex w-full left-[0] xl:left-auto mb-10" style={navbarStyle}>
-            <div className="flex flex-row items-center justify-between w-full gap-40 max-w-screen-xl mx-auto p-8 sm:p-12 pb-10 lg:px-0 lg:pb-5 lg:pt-14">
+          <div className="NavBar__InnerWrapper fixed z-[100] flex w-full left-[0] xl:left-auto mb-10 pt-5" style={navbarStyle}>
+            <div className="flex flex-row items-center justify-between w-full gap-40 max-w-screen-xl mx-auto p-8 sm:p-12 pb-10 lg:px-0 lg:pb-5 lg:pt-0">
               <div>
                 <NavLogo
                   isCurrentRoute={getIsActiveRoute(
