@@ -9,17 +9,18 @@ import { fixedWidthLayoutClasses } from '@/constants';
 import CryImage from "../../../public/assets/images/cry2.png"
 
 import Image from 'next/image';
+import { getContentfulBlogPosts, getContentfulTags } from '@/contentful/contentfulClient';
 
 interface Props {
-    blogPosts: EntryCollection<ContentfulBlogPost>;
-    contentfulTags: ContentfulCollection<Tag>
+    blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;
+    contentfulTags: Awaited<ReturnType<typeof getContentfulTags>>;
 }
 
 const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
     const [searchInput, setSearchInput] = React.useState("");
     const [subscribeEmail, setSubscribeEmail] = React.useState("")
 
-    const postCount = Object.keys(blogPosts.items).length;
+    const postCount = Object.keys(blogPosts).length;
 
     const [selectedTagIds, setSelectedTagIds] = React.useState<Set<string>>(
         new Set([])
@@ -49,8 +50,8 @@ const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
     // Return all queried blog posts id no tag selected, otherwise return only if for every selectedTag, each filteredBlogPost has to contain that tag
     const filteredBlogPostsByTags =
         selectedTagIds.size === 0
-            ? blogPosts.items
-            : blogPosts.items.filter((post: any) => {
+            ? blogPosts
+            : blogPosts.filter((post: any) => {
                 return selectedTagIdsAsArray.every((selectedTag) => {
                     return post.metadata.tags.some((tag: any) => tag.sys.id === selectedTag);
                 });
@@ -96,7 +97,7 @@ const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
                 count={postCount}
             />
             <TagsSection
-                tags={contentfulTags.items}
+                tags={contentfulTags}
                 selectedTags={selectedTagIds}
                 onTagSelect={updateSelectedTagIds}
                 availableTags={availableTagIds}

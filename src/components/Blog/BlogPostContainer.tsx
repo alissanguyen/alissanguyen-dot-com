@@ -14,11 +14,12 @@ import ArrowDarkIcon from "../../../public/assets/svg/arrowDark.svg"
 import Image from 'next/image';
 import AuthorSection from '../BlogPost/AuthorSection/AuthorSection';
 import RelatedPostsSection from '../BlogPost/RelatedPostsSection/RelatedPostsSection';
+import { getContentfulBlogPosts, getContentfulTags } from '@/contentful/contentfulClient';
 
 interface Props {
     blogPost: Entry<ContentfulBlogPost>;
-    blogPosts: EntryCollection<ContentfulBlogPost>;
-    contentfulTags: ContentfulCollection<Tag>
+    blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;
+    contentfulTags: Awaited<ReturnType<typeof getContentfulTags>>;
 }
 
 const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTags }) => {
@@ -47,7 +48,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
 
     // Only suggest three other blogPosts, TODO: Question -- Should we decide to
     // give three random suggestions or the first three in this array?
-    const blogPostWithAtLeastOneSharedTag = blogPosts.items
+    const blogPostWithAtLeastOneSharedTag = blogPosts
         .filter((post: any) => {
             return (
                 post.sys.id !== blogPost.sys.id &&
