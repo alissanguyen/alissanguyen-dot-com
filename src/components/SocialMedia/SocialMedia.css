@@ -1,6 +1,6 @@
 .sm-wrapper .icon {
   border-radius: 50%;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 14px;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   width: 50px;
