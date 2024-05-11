@@ -5,7 +5,6 @@ export type Tech = {
 export enum AlertType {
   ERROR = "error",
   SUCCESS = "success",
-  CONFIRMED = "confirmed"
 }
 
 export enum SupportedTheme {

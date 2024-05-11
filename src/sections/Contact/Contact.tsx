@@ -2,6 +2,8 @@ import * as React from 'react';
 import "./Contact.css";
 import emailjs from "@emailjs/browser";
 import SparkleSVG from '@/components/SparkleSVG';
+import Alert from '@/components/Alert';
+import { AlertType } from '@/types';
 
 interface Props { }
 
@@ -24,11 +26,15 @@ export default ContactSection;
 
 interface ContactFormProps { }
 
+interface Error {
+    type: AlertType;
+    message: string
+}
 const ContactForm: React.FC<ContactFormProps> = ({ }) => {
-
+    const [error, setError] = React.useState<Error | null>();
     const EMAILJS_KEY = process.env.NEXT_PUBLIC_EMAILJS_KEY;
 
-    const [formData, setFormData] = React.useState({
+    const initialFormData = {
         service_id: 'service_q7qz7n8',
         template_id: 'template_9tmyq5i',
         user_id: EMAILJS_KEY,
@@ -37,7 +43,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
             email: '',
             message: '',
         },
-    });
+    };
+
+    const [formData, setFormData] = React.useState(initialFormData);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -54,12 +62,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
 
         // Validate the message field
         if (typeof formData.template_params.message !== "string") {
-            alert("Your message is not a string.");
+            setError({ type: AlertType.ERROR, message: "Your message is not a string." });
             return;
         }
 
         if (!formData.template_params.message.match(/^(?!.*<script>)(?!.*<\/script>)(?!.*<iframe>)(?!.*<\/iframe>)(?!.*<embed>)(?!.*<\/embed>)(?!.*<object>)(?!.*<\/object>)(?!.*<applet>)(?!.*<\/applet>)(?!.*<style>)(?!.*<\/style>)(?!.*<link>)(?!.*<\/link>)(?!.*<meta>)(?!.*<\/meta>).*$/)) {
-            alert("Please enter a valid message without any HTML tags.");
+            setError({ type: AlertType.ERROR, message: "Please enter a valid message without any HTML tags." });
             return;
         }
 
@@ -73,12 +81,12 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
             transformedMsg.includes("robot ") ||
             transformedMsg.includes(" robot ")
         ) {
-            alert("Your activity is unusual, please try again or contact me through Linkedin.");
+            setError({ type: AlertType.ERROR, message: "Unusual activities detected, please try again or contact me through Linkedin." });
             return;
         }
 
         if (formData.template_params.message.length < 10) {
-            alert("Message must be at least 10 characters.");
+            setError({ type: AlertType.ERROR, message: "Message must be at least 10 characters." });
             return;
         }
 
@@ -86,11 +94,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
             .send(formData.service_id, formData.template_id, formData.template_params, { publicKey: EMAILJS_KEY })
             .then((response) => {
                 console.log('Email sent successfully!', response);
-                alert('Your mail is sent!');
+                setError({ type: AlertType.SUCCESS, message: "Message sent successfully, please check your email for confirmation." }); // Clear any previous errors
+                setFormData(initialFormData); // Reset the form data to initial values
+
+                // Set a timer to remove the success message after 5 seconds
+                setTimeout(() => {
+                    setError(null);
+                }, 5000);
             })
             .catch((error) => {
                 console.error('Error sending email:', error);
-                alert('Oops... ' + JSON.stringify(error));
+                setError({ type: AlertType.ERROR, message: "Message failed to send, please try again later." });
             });
     };
 
@@ -98,16 +112,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
     return (
         <div className="login-box w-full text-dark-textPrimary mt-5">
             <form onSubmit={handleSubmit}>
+                {error ? <Alert type={error.type} message={error.message} /> : null}
                 <div className="user-box relative">
-                    <input type="text" id="name" className="w-full custom2:w-1/2 text-base" name="name" required={true} pattern="^[a-zA-Z\s]+$" title="Name should only contain letters and spaces" onChange={handleChange} />
+                    <input type="text" id="name" className="w-full custom2:w-1/2 text-base" name="name" required={true} pattern="^[a-zA-Z\s]+$" title="Name should only contain letters and spaces" onChange={handleChange} value={formData.template_params.name} />
                     <label htmlFor="name">Your Name *</label>
                 </div>
                 <div className="user-box relative">
-                    <input type="email" className="w-full custom2:w-1/2 text-base" id="email" name="email" required={true} pattern="^[A-Za-z0-9._\%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Please enter a valid email address" onChange={handleChange} />
+                    <input type="email" className="w-full custom2:w-1/2 text-base" id="email" name="email" required={true} pattern="^[A-Za-z0-9._\%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$" title="Please enter a valid email address" onChange={handleChange} value={formData.template_params.email} />
                     <label htmlFor="email">Email Address *</label>
                 </div>
                 <div className="user-box relative">
-                    <textarea name="message" className="w-full custom2:w-[80%] text-base" id="message" required={true} onChange={handleChange} />
+                    <textarea name="message" className="w-full custom2:w-[80%] text-base" id="message" required={true} onChange={handleChange} value={formData.template_params.message} />
                     <label htmlFor="message">A Few Words *</label>
                 </div>
                 <div className='wrap'>

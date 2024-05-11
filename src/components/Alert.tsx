@@ -9,7 +9,7 @@ interface Props extends React.PropsWithChildren {
 
 const Alert: React.FC<Props> = (props) => {
   return (
-    <div className="Alert">
+    <div className="Alert mb-6">
       {props.type === AlertType.SUCCESS ? (
         <div className="bg-green-100 p-5 w-full rounded-lg">
           <div className="flex justify-between">
@@ -25,16 +25,9 @@ const Alert: React.FC<Props> = (props) => {
                 {props.message}
               </div>
             </div>
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="flex-none fill-current text-green-600 h-3 w-3"
-            >
-              <path d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
-            </svg> */}
           </div>
         </div>
-      ) : props.type === AlertType.ERROR ? (
+      ) : (
         <div className="bg-red-100 p-5 w-full rounded-lg">
           <div className="flex space-x-3">
             <svg
@@ -48,21 +41,6 @@ const Alert: React.FC<Props> = (props) => {
               <div className="flex-1 leading-tight text-sm text-red-600">
                 {props.message}
               </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="bg-blue-100 p-5 w-full border-l-4 border-blue-500 rounded-lg">
-          <div className="flex space-x-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="flex-none fill-current text-blue-500 h-4 w-4"
-            >
-              <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-.001 5.75c.69 0 1.251.56 1.251 1.25s-.561 1.25-1.251 1.25-1.249-.56-1.249-1.25.559-1.25 1.249-1.25zm2.001 12.25h-4v-1c.484-.179 1-.201 1-.735v-4.467c0-.534-.516-.618-1-.797v-1h3v6.265c0 .535.517.558 1 .735v.999z" />
-            </svg>
-            <div className="flex-1 leading-tight text-sm text-blue-700">
-              {props.message}
             </div>
           </div>
         </div>

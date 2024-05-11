@@ -1,5 +1,5 @@
 /* CUSTOM GLOBAL STYLES EVEN MORE HAHA */
-@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -89,7 +89,8 @@ html.light-theme-blog {
   --base01: rgb(212, 212, 212);
   --base02: rgba(61, 66, 66, 0.596);
   --base03: rgb(169, 173, 193);
-
+  /* NAVBAR */
+  --background-nav: rgba(0, 0, 0, 0.838);
   /* BASIC */
   --background-color: black;
   --text-large-color: #7bf0ff;
@@ -210,6 +211,8 @@ html.light-theme-blog {
   --base01: rgb(90, 96, 100);
   --base02: rgba(200, 221, 221, 0.664);
   --base03: rgb(152, 159, 177);
+  /* NAVBAR */
+  --background-nav: rgba(255, 255, 255, 0.866);
   /* BASIC */
   --background-color: #f3f3f3f8;
   --text-large-color: rgb(5, 113, 83);
@@ -364,7 +367,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 input:-internal-autofill-selected {
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-  -webkit-text-fill-color: white !important; /* Change color based on theme*/
+  -webkit-text-fill-color: var(--text-small-color) !important; /* Change color based on theme*/
   background-color: transparent !important;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -372,24 +375,22 @@ input:-internal-autofill-selected {
 .gradient-text {
   /* Fallback: Set a background color. */
   background-color: rgb(0, 98, 211);
-    
+
   /* Create the gradient. */
   background-image: var(--gradient-text);
-  
+
   /* Set the background size and repeat properties. */
   background-size: 100%;
   background-repeat: repeat;
   background-clip: text;
-  
+
   /* Use the text as a mask for the background. */
   /* This will show the gradient as a text color rather than element bg. */
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
-
 }
-
 
 /* GRADIENT BLOB  */
 .gradient-blob {
@@ -466,7 +467,6 @@ input:-internal-autofill-selected {
 .gradient-bg {
   z-index: -10;
 }
-
 
 /* GLOWING CLOUDS */
 
@@ -625,8 +625,6 @@ input:-internal-autofill-selected {
   }
 }
 
-
-
 /* 
 Top-level view transition rules
 */
@@ -653,7 +651,7 @@ Top-level view transition rules
   }
   to {
     transform: translateY(0);
-    opacity: 1
+    opacity: 1;
   }
 }
 

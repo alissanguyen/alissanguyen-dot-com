@@ -1,7 +1,7 @@
 
 .login-box .user-box input, .login-box .user-box textarea {
   padding: 5px 0;
-  color: var(--base01);
+  color: var(--text-small-color);
   margin-bottom: 30px;
   border: none;
   border-bottom: 1px solid var(--base01);
