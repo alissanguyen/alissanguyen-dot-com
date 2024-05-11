@@ -2,10 +2,10 @@ import "@/styles/blog.css";
 
 import { getPostsAndTags } from "@/app/api/getPostsAndTags";
 import BlogPostsContainer from "@/components/Blog/BlogPostsContainer";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const BLOG_DESCRIPTION =
-"Hi, I'm Alissa. My blog features a wide range of topics, including programming tutorials, web development tips, industry trends, and personal growth. Whether you're a beginner looking to learn coding best practices or an experienced developer seeking inspiration, my blog provides engaging and informative content.";
+    "Hi, I'm Alissa. My blog features a wide range of topics, including programming tutorials, web development tips, industry trends, and personal growth. Whether you're a beginner looking to learn coding best practices or an experienced developer seeking inspiration, my blog provides engaging and informative content.";
 
 const IMAGE_WIDTH = "1200";
 const IMAGE_HEIGHT = "630";
@@ -57,10 +57,13 @@ export const metadata: Metadata = {
             },
         ],
     },
-    themeColor: '#212529',
     authors: [{ url: AUTHOR }],
     metadataBase: new URL(WEBSITE_URL)
 };
+
+export const viewport: Viewport = {
+    themeColor: '#212529',
+}
 
 export default async function Blog() {
     const { blogPosts, contentfulTags } = await getPostsAndTags();

@@ -2,7 +2,7 @@ import { getPostsAndTags } from "@/app/api/getPostsAndTags";
 import BlogPostContainer from "@/components/Blog/BlogPostContainer";
 import { getContentfulBlogPostBySlug } from "@/contentful/contentfulClient";
 import "@/styles/blogpost.css"
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const TWITTER_PUBLISHER = "https://twitter.com/ai_alissa";
 const TWITTER_CARD_TYPE = "summary_large_image";
@@ -62,9 +62,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       description,
       images: [imageURl],
     },
-    themeColor: "#212529",
     publisher: TWITTER_PUBLISHER,
   };
+}
+
+export const viewport: Viewport = {
+  themeColor: '#212529',
 }
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
