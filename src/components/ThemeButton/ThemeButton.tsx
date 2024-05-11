@@ -31,19 +31,16 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
   };
   const nextTheme =
     theme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK;
-  const generateFormData = () => {
-    const form = new FormData();
-    form.append("theme", nextTheme);
-    return form;
-  };
 
   function toggleTheme(theme: SupportedTheme) {
     requestAnimationFrame(() => {
       handleToggleTheme(theme);
 
-      fetch("/setTheme?index", {
+      fetch("/api/setTheme", {
         method: "POST",
-        body: generateFormData(),
+        body: JSON.stringify({
+          theme: nextTheme
+        }),
         credentials: "same-origin"
       });
     });
@@ -65,7 +62,7 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
                 title="Sun"
               />
             ) : (
-              <MoonIcon/>
+              <MoonIcon />
             )}
           </button>
         </div>
@@ -129,16 +126,18 @@ export const SimplifiedThemeButton: React.FC = () => {
   };
   const nextTheme =
     theme === SupportedTheme.DARK ? SupportedTheme.LIGHT : SupportedTheme.DARK;
+
   const generateFormData = () => {
     const form = new FormData();
     form.append("theme", nextTheme);
     return form;
   };
+
   function toggleTheme(theme: SupportedTheme) {
     requestAnimationFrame(() => {
       handleToggleTheme(theme);
 
-      fetch("/setTheme?index", {
+      fetch("/api/setTheme", {
         method: "POST",
         body: generateFormData(),
         credentials: "same-origin"
