@@ -1,13 +1,13 @@
-import { ContentfulCollection, EntryCollection, Tag } from "contentful";
-import { ContentfulBlogPost } from "@/contentful/types";
 import {
   getContentfulBlogPosts,
   getContentfulTags
 } from "@/contentful/contentfulClient";
+import { ContentfulBlogPost } from "@/contentful/types";
+import { ContentfulCollection, Entry, Tag } from "contentful";
 
 export interface PostsAndTags {
-  blogPosts: EntryCollection<ContentfulBlogPost>;
-  contentfulTags: ContentfulCollection<Tag>;
+  blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;
+  contentfulTags: Awaited<ReturnType<typeof getContentfulTags>>;
 }
 
 export const getPostsAndTags = async (): Promise<PostsAndTags> => {
