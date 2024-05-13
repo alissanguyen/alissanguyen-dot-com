@@ -4,7 +4,7 @@ import { ContentfulBlogPost, ContentfulBlogPostTranslation } from '@/contentful/
 import { useTheme } from '@/providers/ThemeProvider';
 import { SupportedTheme } from '@/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { ContentfulCollection, Entry, EntryCollection, Tag, TagLink } from 'contentful';
+import { Entry, TagLink } from 'contentful';
 import * as React from 'react';
 import { tagIdsToDisplayNames } from './BlogPostTags';
 import FloatingHeader from '../FloatingHeader/FloatingHeader';
@@ -70,7 +70,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
 
             <div className="text-post-bodyText">
                 <div
-                    className={`${fixedWidthLayoutClasses} flex flex-col mb-5 xl:mb-10`}
+                    className={`${fixedWidthLayoutClasses} max-w-screen-xl flex flex-col mb-5 xl:mb-10`}
                 >
                     <a
                         href="/blog"
@@ -88,26 +88,28 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                         />
                         Back to blog
                     </a>
-                    <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl font-bold max-w-[700px] mx-auto">
+                    <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl md:text-6xl font-bold max-w-[900px] mx-auto mb-4 custom2:mb-8 md:mb-12">
                         {blogPost.fields.blogPostTitle}
                     </h1>
-                    <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[700px]">
-                        <p className="BlogPost__DatePublish text-xl mb-2 custom2:mb-0">
+                    <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[900px]">
+                        <p className="BlogPost__DatePublish text-sm xs:text-lg md:text-xl mb-2 custom2:mb-0">
                             Published on {subPublishedDate}
                         </p>
-                        <p className="BlogPost__DatePublish text-xl">
+                        <p className="BlogPost__DatePublish text-sm xs:text-lg md:text-xl">
                             Last updated on {subUpdatedDate}
                         </p>
                     </div>
                 </div>
-                <img
+                <Image
                     src={"https://" + blogPost.fields.blogPostSplash.fields.file.url}
                     className="BlogPost__SplashImage max-w-[1200px] mb-5 xl:mb-10 mx-auto rounded-lg w-[83%] custom3:w-[85%] xs:w-[90%] xl:w-full"
                     alt={blogPost.fields.blogPostSplash.fields.title}
                     title={blogPost.fields.blogPostSplash.fields.title}
+                    width={1200}
+                    height={600}
                 />
                 <div
-                    className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20 max-w-[700px]`}
+                    className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20 max-w-[900px]`}
                 >
                     <div className="Translation__Section flex flex-col sm:flex-row sm:items-center self-baseline text-base sm:text-lg gap-5">
                         {blogPostTranslation.length > 1 ? (
@@ -137,7 +139,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                                 })}
                             </div>
                         ) : (
-                            <div className="BlogPost__TranslationSection flex flex-col custom3:flex-row justify-start text-post-bodyText">
+                            <div className="BlogPost__TranslationSection flex flex-col custom3:flex-row justify-start text-teal-600/80">
                                 <span className="italic mr-10">No translation available.</span>
                             </div>
                         )}
