@@ -10,7 +10,6 @@ import { THEME_KEY, ThemeSchema } from '@/utils/theming';
 import { SupportedTheme } from '@/types';
 import { ThemeContextProvider } from '@/providers/ThemeProvider';
 
-
 export const WEBSITE_KEYWORDS =
   "Learn Remix, React, JavaScript, Typescript, Alissa Nguyen Blog, Alissa Nguyen, Software Development, Software Engineer, Modern Programing, Frontend Engineer, Web Developer, AlissaNguyen, Seattle, Full-stack developer, Web development, Software engineering, Programming languages, Responsive web design, User experience (UX), User interface (UI), Front-end development, Back-end development, Web applications, Mobile-friendly websites.";
 
@@ -26,16 +25,18 @@ const TWITTER_ACC = "@ai_alissa";
 const TWITTER_CARD_TYPE = "summary_large_image";
 const PORTFOLIO_IMAGE_URL =
   "http://www.alissanguyen.com/assets/images/preview.png";
+
 export const metadata: Metadata = {
   title: PORTFOLIO_WEBSITE_NAME,
   description: WEBSITE_DESCRIPTION,
   keywords: WEBSITE_KEYWORDS,
   icons: {
     icon: [
-      { url: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
-      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/assets/favicon/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+      { url: '/assets/favicon/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/assets/favicon/favicon.ico', type: 'image/x-icon', sizes: 'any' },
     ],
-    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180' }],
+    apple: [{ url: '/assets/favicon/apple-touch-icon.png', sizes: '180x180' }],
   },
   openGraph: {
     title: PORTFOLIO_WEBSITE_NAME,
@@ -66,7 +67,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  manifest: '/site.webmanifest',
+  manifest: '/assets/favicon/site.webmanifest',
 };
 
 const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
@@ -77,11 +78,16 @@ const Layout: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   const resolvedTheme = validatedTheme ? validatedTheme : SupportedTheme.DARK
 
-
   return (
     <ModalContextProvider>
       <ThemeContextProvider initialTheme={resolvedTheme}>
         <HtmlElement initialTheme={resolvedTheme}>
+          <head>
+            <link rel="icon" href="/assets/favicon/favicon.ico" sizes="any" />
+            <link rel="icon" href="/assets/favicon/favicon-16x16.png" type="image/png" sizes="16x16" />
+            <link rel="icon" href="/assets/favicon/favicon-32x32.png" type="image/png" sizes="32x32" />
+            <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" sizes="180x180" />
+          </head>
           <body id="root">
             <script
               async
