@@ -13,15 +13,15 @@ const AuthorSection: React.FC<Props> = ({}) => {
     theme === SupportedTheme.LIGHT ? "border-gray-400" : "border-gray-200";
   return (
     <div
-      className={`BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-col items-center justify-center sm:grid-cols-4 sm:gap-10 py-10`}
+      className={`BlogPost__AuthorSection__Container border-t-2 ${borderColor} flex m-auto flex-col items-center justify-center sm:grid sm:grid-cols-6 gap-5 py-10`}
     >
       <Image
         src={AuthorImage}
         alt="My portrait picture"
-        className="BlogPost__AuthorSection__AuthorAvatar rounded-full mb-7 sm:mb-0 w-56"
+        className="BlogPost__AuthorSection__AuthorAvatar rounded-full mb-7 sm:mb-0 col-span-2"
         title="My portrait picture"
       />
-      <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start sm:col-span-3">
+      <div className="BlogPost__AuthorSection__Biography flex flex-col items-start justify-start sm:col-span-4">
         <p className="font-medium text-2xl mb-4 xs:mb-2 text-post-bodyTextLg">
           Written by Alissa Nguyen
         </p>

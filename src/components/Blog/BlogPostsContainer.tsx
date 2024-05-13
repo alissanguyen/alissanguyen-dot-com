@@ -1,15 +1,13 @@
 'use client'
-import { ContentfulBlogPost } from '@/contentful/types';
-import { ContentfulCollection, EntryCollection, Tag } from 'contentful';
-import * as React from 'react';
-import BlogPostCard from './BlogPostCard';
-import TagsSection from './TagsSection';
-import SearchBarSection from './SearchBarSection';
 import { fixedWidthLayoutClasses } from '@/constants';
-import CryImage from "../../../public/assets/images/cry2.png"
+import * as React from 'react';
+import CryImage from "../../../public/assets/images/cry2.png";
+import BlogPostCard from './BlogPostCard';
+import SearchBarSection from './SearchBarSection';
+import TagsSection from './TagsSection';
 
-import Image from 'next/image';
 import { getContentfulBlogPosts, getContentfulTags } from '@/contentful/contentfulClient';
+import Image from 'next/image';
 
 interface Props {
     blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;
@@ -88,7 +86,7 @@ const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
     // TODO: Persists tags and search selection in the url
 
     return (
-        <div className={`${fixedWidthLayoutClasses} mt-[35%] xs:mt-[25%] md:mt-[15%]`}>
+        <div className={`${fixedWidthLayoutClasses} max-w-screen-xl mt-[35%] xs:mt-[25%] md:mt-[15%]`}>
             <SearchBarSection
                 search={searchInput}
                 setSearch={setSearchInput}

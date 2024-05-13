@@ -169,7 +169,7 @@ export const enum STICKY_BORDER {
   PURPLE = "rgb(203, 89, 255)",
   RED = "rgb(255, 69, 69)"
 }
-export const fixedWidthLayoutClasses = `relative max-w-screen-xl w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
+export const fixedWidthLayoutClasses = `relative w-full text-3xl m-auto px-8 sm:px-12 lg:px-5 xl:px-0`;
 
 
 export const techs = [

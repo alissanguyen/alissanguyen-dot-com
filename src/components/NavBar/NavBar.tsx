@@ -62,8 +62,6 @@ const Navbar: React.FC = (props) => {
     };
   }, []);
 
-  // max-w-screen-lg
-  // max-w-screen-xl pr-5 
   return (
     isOnSlugRoute ? (<div className={" mb-10 md:mb-16 lg:mb-20"} id={NAVBAR_ID} ></div >) : (<>
       <div

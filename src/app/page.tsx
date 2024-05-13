@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <div className="app tracking-wide text-lg">
-        <div className={`${fixedWidthLayoutClasses} flex flex-col`}>
+        <div className={`${fixedWidthLayoutClasses} max-w-screen-xl flex flex-col`}>
           <AboutMe />
           <div style={{ zIndex: -10 }}>
             <GradientBackground3 />
