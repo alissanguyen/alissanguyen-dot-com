@@ -83,6 +83,9 @@ html.light-theme-blog {
     #d4e0ed 100%
   );
 }
+html.dark-theme-slug {
+  --background-color: rgb(33, 37, 41);
+}
 
 .dark-theme {
   --base00: #16181a;
@@ -335,10 +338,10 @@ html.light-theme-blog {
 /* ---------------------------GLOBAL BASE-------------------------- */
 body {
   font-size: 62.5%;
-  background-color: var(--background-color);
   overflow-x: hidden;
   font-weight: 400;
   width: 100%;
+  background-color: var(--background-color);
   font-display: block;
   font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
@@ -367,7 +370,9 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active,
 input:-internal-autofill-selected {
   -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-  -webkit-text-fill-color: var(--text-small-color) !important; /* Change color based on theme*/
+  -webkit-text-fill-color: var(
+    --text-small-color
+  ) !important; /* Change color based on theme*/
   background-color: transparent !important;
   transition: background-color 5000s ease-in-out 0s;
 }
