@@ -159,11 +159,14 @@ export const options: Options = {
               className="flex flex-col custom2:flex-row w-full EmbeddedEntry_BlogPost_Card mt-4 px-5 pt-5 custom2:p-5 rounded-lg"
               key={post.blogPostSlug}
             >
+              {/* NEXT IMAGE */}
               <Image
-                src={post.blogPostSplash.fields.file.url}
+                src={"https:" + post.blogPostSplash.fields.file.url}
                 alt={post.blogPostSplash.fields.title}
                 title={post.blogPostSplash.fields.title}
                 className="object-cover w-full mb-2 custom2:mb-0 custom2:max-w-[240px] custom2:mr-5 rounded-lg"
+                width={1200}
+                height={600}
               />
               <div className="flex flex-col items-baseline justify-between">
                 <span className="text-xl mb-2 text-blog-lgText font-bold">

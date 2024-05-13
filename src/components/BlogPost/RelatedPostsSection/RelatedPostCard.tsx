@@ -3,6 +3,7 @@
 import BlogPostTags from "@/components/Blog/BlogPostTags";
 import { ContentfulBlogPost } from "@/contentful/types";
 import { Entry } from "contentful";
+import Image from "next/image";
 import * as React from "react";
 
 interface Props {
@@ -19,12 +20,14 @@ const RelatedPostCard: React.FC<Props> = (props) => {
         href={`/blog/${props.post.fields.blogPostSlug}`}
         className="RelatedBlogPost__Link__Container h-full rounded-lg"
       >
-        <img
-          src={props.post.fields.blogPostSplash.fields.file.url}
+        <Image
+          src={"https:" + props.post.fields.blogPostSplash.fields.file.url}
           alt={props.post.fields.blogPostSplash.fields.title}
           title={props.post.fields.blogPostSplash.fields.title}
           className="RelatedBlogPost__Image rounded-lg w-full h-80"
           loading="lazy"
+          height={320}
+          width={320}
         />
       </a>
       <div className="flex flex-col">
