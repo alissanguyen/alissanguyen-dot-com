@@ -1,5 +1,5 @@
 .ExternalLinkButton__Wrapper {
-  border: 1px solid var(--external-btn-border);
+  border: 1px solid currentColor;
   border-radius: 0.5rem;
 }
 

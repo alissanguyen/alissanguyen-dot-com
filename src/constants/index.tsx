@@ -32,6 +32,10 @@ import RemixIcon from "../../public/assets/images/tech/remix.svg";
 import TailwindIcon from "../../public/assets/images/tech/tailwindcss.svg";
 import NPMIcon from "../../public/assets/images/tech/npm.svg";
 import NetlifyIcon from "../../public/assets/images/tech/netlify.svg";
+import SentryIcon from "../../public/assets/images/tech/sentry.svg";
+import PostHogIcon from "../../public/assets/images/tech/posthog.svg";
+import DrizzleIcon from "../../public/assets/images/tech/drizzleorm.svg";
+import ClerkIcon from "../../public/assets/images/tech/clerk.svg";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
@@ -243,6 +247,26 @@ export const techs = [
     name: "Netlify",
     icon: NetlifyIcon
   },
+  {
+    id: "sentry",
+    name: "Sentry",
+    icon: SentryIcon
+  },
+  {
+    id: "posthog",
+    name: "PostHog",
+    icon: PostHogIcon
+  },
+  {
+    id: "drizzle",
+    name: "Drizzle",
+    icon: DrizzleIcon
+  },
+  {
+    id: "clerk",
+    name: "Clerk",
+    icon: ClerkIcon
+  },
 ];
 
 // export const abilities = [
@@ -265,9 +289,9 @@ export const mainProjects = [
     gitRepo: "https://github.com/alissanguyen/react-use-typewriter",
     website: "https://usetypewriter.com/",
     npm: "https://www.npmjs.com/package/use-typewriter-hook",
-    bgLight: "linear-gradient(-120deg, #fedfe7, #fbedff)",
+    bgLight: "linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 75% )",
     bgDark:
-      "linear-gradient(120deg, rgba(255, 91, 137, 0.25) 53.5%, rgba(234, 68, 68, .25) 100.2%)"
+      "linear-gradient(120deg, #41D8DD, #5583EE)"
   },
   {
     name: "Portfolio & Blog",
@@ -276,9 +300,9 @@ export const mainProjects = [
     frameworks: "Remix, TypeScript, SendGrid, Contentful",
     gitRepo: "",
     website: "www.alissanguyen.com",
-    bgLight: "linear-gradient(120deg, #ffeede, #fff9ea)",
+    bgLight: "linear-gradient(120deg, #fde882, #f78fad)",
     bgDark:
-      "linear-gradient(120deg, rgba(217, 164, 4, .25) 10.7%, rgba(242, 116, 5, .25) 113.2%)"
+      "linear-gradient(120deg, #f6d365 0%, #fda085 31%, #e3613b 95%)"
   },
   {
     name: "Planets",
@@ -289,8 +313,8 @@ export const mainProjects = [
     gitRepo: "https://github.com/alissanguyen/planets",
     frameworks: "Javascript, HTML, CSS & styled-components",
     website: "https://planets.alissanguyen.dev",
-    bgLight: "linear-gradient(120deg, #d3e0ff, #eaeaff)",
-    bgDark: "linear-gradient(120deg, rgba(82, 91, 219, .25) 11.2%, rgba(65, 71, 150, 0.25))"
+    bgLight: "linear-gradient(120deg, #fbc2eb, #a6c1ee)",
+    bgDark: "linear-gradient(120deg, #deb0df 11.2%, #a16bfe)"
   },
   {
     name: "Memory Game",
@@ -299,8 +323,8 @@ export const mainProjects = [
     frameworks: "Javascript, HTML, CSS",
     role: "2020 — Web development",
     website: "https://memory.alissanguyen.dev/",
-    bgLight: "linear-gradient(120deg, #d4ffd3, #eeffea)",
-    bgDark: "linear-gradient(120deg, rgba(82, 219, 86, 0.25) 11.2%, rgba(65, 150, 73, 0.25))"
+    bgLight: "linear-gradient(120deg, #e1ff9c, #99e5a2)",
+    bgDark: "linear-gradient(120deg, #c7eb59 11.2%, #6de195)"
   },
 ];
 
