@@ -20,13 +20,13 @@ const FeaturedProjects: React.FC = ({ }) => {
       <p className="PublishedSoftware__Text text-4xl Resume__BigText font-semibold mb-8">Publised Software & Writing</p>
       <div className="line-break-gradient"></div>
       <div
-        className={`main-projects-wrapper text-textSmColor grid custom:grid-cols-2 gap-10 z-10 mt-8`}
+        className={`main-projects-wrapper text-black grid custom:grid-cols-2 gap-5 z-10 mt-8`}
         ref={setRef}
       >
 
         {mainProjects.map((project, index) => (
           <div
-            className={`FeaturedProject__Card ${animationClassName} duration-100 ease-in flex flex-col items-start justify-between h-full bg-cover gap-10 p-7 xs:p-10 rounded-2xl`}
+            className={`FeaturedProject__Card ${animationClassName} opacity-80 hover:opacity-100 duration-100 ease-in-out flex flex-col items-start justify-between h-full bg-cover gap-10 hover:-translate-y-2 p-7 xs:p-10`}
             style={{
               backgroundImage: `${theme === SupportedTheme.LIGHT ? project.bgLight : project.bgDark
                 }`,
@@ -39,17 +39,17 @@ const FeaturedProjects: React.FC = ({ }) => {
                 <p className="main-project-title font-semibold text-2xl sm:text-3xl pb-5">
                   {project.name}
                 </p>
-                <p className="main-project-description text-base leading-8 mb-4 font-light">
+                <p className="main-project-description text-lg leading-8 mb-4 font-light">
                   {project.description}
                 </p>
-                <p className="main-project-time text-sm text-projects-subText pb-2">
+                <p className="main-project-time text-sm text-slate-700 pb-2 font-light">
                   {project.role}
                 </p>
               </div>
 
               <div className="main-project-frameworks flex flex-row ">
                 <ArrowRightIcon className="text-projecs-arrow w-5 mr-3" />
-                <p className="text-[15px] leading-7">{project.frameworks}</p>
+                <p className="text-[16px] leading-7 font-medium">{project.frameworks}</p>
               </div>
 
               <div className="spacer-div sm:mt-3"></div>
