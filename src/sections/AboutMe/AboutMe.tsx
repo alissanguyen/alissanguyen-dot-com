@@ -1,45 +1,47 @@
-import * as React from "react";
-import Titles from "./Titles";
-import Hi from "./Hi";
 import ResumeButton from "@/components/ResumeButton/ResumeButton";
 import SocialMedia from "@/components/SocialMedia/SocialMedia";
 import SparkleSVG from "@/components/SparkleSVG";
-import "./AboutMe.css"
-import EclipseSrc from "../../../public/assets/images/background/Eclipse.svg"
-import AvatarImageSrc from "../../../public/assets/aboutme/avatar.jpeg"
-import GradientImageSrc from "../../../public/assets/images/background/Gradient.svg"
-import FrontEndImage from "../../../public/assets/aboutme/front-end.png"
-import WebHostingImage from "../../../public/assets/aboutme/web-hosting.png"
-import DatabaseManagementImage from "../../../public/assets/aboutme/database-management.png"
-import CMSImage from "../../../public/assets/aboutme/cms.png"
+import * as React from "react";
+import AvatarImageSrc from "../../../public/assets/aboutme/avatar.jpeg";
+import EclipseSrc from "../../../public/assets/images/background/Eclipse.svg";
+import GradientImageSrc from "../../../public/assets/images/background/Gradient.svg";
+import "./AboutMe.css";
+import Hi from "./Hi";
+import Titles from "./Titles";
 
 import Image from "next/image";
 
 
 const skills = [
   {
+    id: "fs",
+    title: "Full-stack development",
+    description: "Building robust and scalable web applications using the T3 stack (Next.js, tRPC, Prisma, Tailwind CSS, TypeScript) for seamless integration between frontend and backend. Implementing type-safe APIs and data validation with Zod for reliable data integrity.",
+  },
+  {
     id: "fe",
     title: "Front-end development",
-    description: "Responsive and performant web pages with React or Remix, with and SSR for a better user experience. Utilize modern UI libraries like TailwindCSS, Headless UI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly.",
-    imageSrc: FrontEndImage
+    description: "Responsive and performant web pages with React or Remix, with and SSR for a better user experience. Utilize modern UI libraries like TailwindCSS, Headless UI, ShadUI, Framer Motion, etc. to create beautiful, responsive, and accessible web apps quickly.",
   },
   {
-    id: "wbd",
+    id: "wh",
     title: "Web hosting and deployment",
     description: "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge. Writing easily understood, modular, fast, and type-safe applications with TypeScript and modern JavaScript syntax.",
-    imageSrc: WebHostingImage
   },
   {
-    id: "dm",
-    title: "Database management",
-    description: "Data management with Firestore, Prisma, or Supabase. Use of classic web security principles and user authorization/authentication with Firebase Auth and automated emails with Sendgrid.",
-    imageSrc: DatabaseManagementImage
+    id: "db",
+    title: "Database management and ORMs",
+    description: "Data management with Firestore, Prisma, Supabase, or Drizzle ORM. Use of classic web security principles and user authorization/authentication with Firebase Auth or Clerk for seamless user management.",
   },
   {
     id: "cms",
-    title: "CMS integration",
-    description: "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful.",
-    imageSrc: CMSImage
+    title: "CMS integration and analytics",
+    description: "Creating JAM Stack frontend applications that integrate with modern headless content management systems (CMS) like Contentful. Implementing data analytics and user behavior tracking with Posthog for data-driven decision-making.",
+  },
+  {
+    id: "ai",
+    title: "AI and ML integration",
+    description: "Hosting and integrating AI models using Cloudflare Workers for efficient and scalable AI-powered features. Leveraging the power of AI and machine learning to enhance user experiences and automate processes.",
   }
 ]
 const AboutMe: React.FC<React.PropsWithChildren> = () => {
@@ -87,7 +89,7 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
         <SocialMedia />
       </article>
       <div className="visible custom:hidden">
-      <Image src={AvatarImageSrc} alt="avatar" className="Avatar" />
+        <Image src={AvatarImageSrc} alt="avatar" className="Avatar" />
       </div>
 
       <div className="spacer-div mt-40"></div>
@@ -132,10 +134,11 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
       </div>
       <div className="flex flex-col sm:flex-row gap-10 sm:gap-12 custom:gap-20">
         <div className='flex flex-col items-start gap-3 sm:gap-7 font-light'>
-          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">I had my awakening call recently, and it made me wonder who I am. I woke up one morning and everything seems unfamiliar. I noticed that I have never taken a good look at Seattle. I did not notice that pizzaria in the corner near the street where I live. I did not notice how many different varieties of trees there are throughout the city. I did not notice that tall building with floor to ceiling windows near the entrance to I-5. I did not notice how blue the sky was. &quot;Where am I? Who in the world am I?&quot;</p>
+          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">I had my awakening call recently, and it sent me on a journey of self-discovery. One morning, I woke up to a world that felt alien, as if I had been sleepwalking through life. The vibrant red awning of the corner pizzeria caught my eye, a splash of color I had never noticed before. The trees lining the streets stood tall and proud, each one unique in its own way. The glass façade of a skyscraper near the I-5 entrance gleamed in the morning light, reflecting the azure sky above. I found myself wondering, &quot;Where am I? Who in the world am I?&quot;</p>
 
-          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">Life has many great puzzles, but the greatest of them all (in my opinion) is the riddle of figuring out who we are, and why we are here. Life has many struggles, but the greatest of them all is to not lose yourself in the process of finding yourself. At the end of the day, I&lsquo;m grateful that I&lsquo;m here, in this moment, and tomorrow I will be a better person than today.</p>
-          <p className="AboutMe__Text text-lg custom3:text-xl custom:text-2xl font-normal text-textLgColor italic leading-relaxed tracking-wide">I believe one of the greatest ability of humans is the ability to introspect and reflect.</p>
+          <p className="AboutMe__Text text-lg custom:text-xl text-subText leading-relaxed tracking-wide">Life is a labyrinth of mysteries, but the most profound one is the quest to unravel our own identity and purpose. As we navigate the twists and turns of this maze, the greatest challenge is to hold onto our authentic selves. In this moment, I am filled with gratitude for the opportunity to exist, to breathe, and to grow. Tomorrow, I will emerge as a better version of myself, like a butterfly breaking free from its chrysalis.</p>
+          <p className="AboutMe__Text text-lg custom3:text-xl custom:text-2xl font-normal text-textLgColor italic leading-relaxed tracking-wide">The ability to introspect and reflect is a superpower that sets humans apart, allowing us to shape our own destinies.</p>
+          {/* &lsquo; */}
         </div>
         <div className='flex flex-col items-start gap-3 sm:gap-6 text-lg custom:text-xl text-textSmColor'>
           <div className="flex flex-col items-start leading-7">
@@ -163,23 +166,12 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
 
       <div className="spacer-div mt-12 custom3:mt-24"></div>
 
-      <ul className='grid grid-cols-1 custom2:grid-cols-2 gap-5 md:gap-10'>
+      <ul className='grid grid-cols-1 custom2:grid-cols-2 gap-10 md:gap-24'>
         {skills.map((skill) => (
-          <li key={skill.id} className="AboutMe__SkillBubble relative flex flex-col items-start overflow-hidden border-2 rounded-3xl md:rounded-[3rem] pt-7 px-7 md:pt-12 md:px-12 pb-0 max-h-[44rem]">
+          <li key={skill.id} className="AboutMe__SkillBubble relative flex flex-col items-start">
 
-            <div className="AboutMe__SkillBubble__Content relative z-[1]">
-              <p className="AboutMe__SkillBubble__Title text-aboutMe-skillTitle font-semibold text-2xl md:text-3xl mb-2">{skill.title}</p>
-              <p className='font-light text-lg md:text-xl text-textSmColor'>{skill.description}</p>
-            </div>
-            <div className="AboutMe__SkillBubble__ImageWrapper w-full overflow-hidden">
-              {skill.imageSrc ? (
-                <Image
-                  src={skill.imageSrc}
-                  alt={skill.title}
-                  className="AboutMe__SkillBubble__Image w-full h-auto block"
-                />
-              ) : null}
-            </div>
+            <p className="AboutMe__SkillBubble__Title text-aboutMe-skillTitle font-semibold text-2xl md:text-3xl mb-2">{skill.title}</p>
+            <p className='font-light text-lg md:text-xl text-textSmColor'>{skill.description}</p>
           </li>
         ))}
       </ul>

@@ -143,7 +143,6 @@
     font-size: 22px;
   }
 }
-
-.AboutMe__SkillBubble, .AboutMe__StatItem {
+.AboutMe__StatItem {
   border: solid .175rem var(--skill-bubble-border)
 }
