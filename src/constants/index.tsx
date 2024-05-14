@@ -299,7 +299,7 @@ export const mainProjects = [
     role: "2020-2024 — Design & web development",
     frameworks: "Remix, TypeScript, SendGrid, Contentful",
     gitRepo: "",
-    website: "www.alissanguyen.com",
+    website: "https://www.alissanguyen.com",
     bgLight: "linear-gradient(120deg, #fde882, #f78fad)",
     bgDark:
       "linear-gradient(120deg, #f6d365 0%, #fda085 31%, #e3613b 95%)"
