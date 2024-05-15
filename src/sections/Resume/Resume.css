@@ -113,7 +113,7 @@ a:hover .underline-animation {
   border-radius: 0.3em;
   transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
   padding-right: 0.5em;
-  color: var(text-large-color);
+  color: var(--sub-text-color);
 }
 
 .animate  {
@@ -129,30 +129,30 @@ a:hover .underline-animation {
     width: attr(width);
   }
 }
-.html.w-90 {
+.html {
   background-image: linear-gradient(45deg, #e22222, #af4261);
 }
   
-.css.w-75 {
+.css {
   background-image: linear-gradient(45deg, #ffd42b, #de530e);
 }
   
-.javascript.w-90 {
+.javascript {
     background-image: linear-gradient(45deg, #fa7d6f, #dba504);
   }
   
-.react.w-80 {
+.react {
     background-image: linear-gradient(45deg, #f8a9a2, #ae50e0);
 }
   
-.typescript.w-70 {
+.typescript {
     background-image: linear-gradient(45deg, #f24949, #f45100ac);
 }
   
-.nodejs.w-65 {
+.nodejs {
     background-image: linear-gradient(45deg, #ae50e0, #ff95bc);
 }
   
-.nextjs.w-85 {
+.nextjs {
     background-image: linear-gradient(45deg, #f67c90, #e4c180);
 }

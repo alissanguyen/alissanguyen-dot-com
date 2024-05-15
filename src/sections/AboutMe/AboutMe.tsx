@@ -25,8 +25,8 @@ const skills = [
   },
   {
     id: "wh",
-    title: "Web hosting and deployment",
-    description: "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge. Writing easily understood, modular, fast, and type-safe applications with TypeScript and modern JavaScript syntax.",
+    title: "Web hosting, deployment, and API management",
+    description: "Deployment to platforms such as Vercel, Netlify, and Cloudflare to leverage caching and firewalls at the edge. Writing easily understood, modular, fast, and type-safe applications with TypeScript and modern JavaScript syntax. Implementing rate limiting with Upstash to protect APIs and ensure fair usage.",
   },
   {
     id: "db",

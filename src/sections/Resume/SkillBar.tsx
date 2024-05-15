@@ -21,13 +21,13 @@ interface SkillsData {
 
 const SkillBar: React.FC<Props> = ({ }) => {
     const skillsRef = React.useRef<SkillsData>({
-        html: 90,
-        css: 75,
-        javascript: 90,
-        react: 80,
-        typescript: 70,
-        nodejs: 65,
-        nextjs: 85,
+        html: 97,
+        css: 96,
+        javascript: 95,
+        react: 88,
+        typescript: 89,
+        nodejs: 85,
+        nextjs: 89,
     });
 
     const skillBarRefs = React.useRef<SkillBarRefs>({});
@@ -72,7 +72,7 @@ const SkillBar: React.FC<Props> = ({ }) => {
                             ref={(el) => {
                                 skillBarRefs.current[key] = el;
                             }}
-                            className={`bar-inner w-0 flex justify-end items-center font-semibold ${key} w-${skillsRef.current[key as keyof SkillsData]} animate-${key}`}
+                            className={`bar-inner w-0 flex justify-end text-sm items-center font-medium ${key} w-${skillsRef.current[key as keyof SkillsData]} animate-${key}`}
                             style={{ width: `${skillsRef.current[key as keyof SkillsData]}%` }}
                         >
                             {`${skillsRef.current[key as keyof SkillsData]}%`}

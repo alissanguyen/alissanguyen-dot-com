@@ -36,6 +36,7 @@ import SentryIcon from "../../public/assets/images/tech/sentry.svg";
 import PostHogIcon from "../../public/assets/images/tech/posthog.svg";
 import DrizzleIcon from "../../public/assets/images/tech/drizzleorm.svg";
 import ClerkIcon from "../../public/assets/images/tech/clerk.svg";
+import UpstashIcon from "../../public/assets/images/tech/upstash.svg";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
@@ -267,6 +268,11 @@ export const techs = [
     name: "Clerk",
     icon: ClerkIcon
   },
+  {
+    id: "upstash",
+    name: "Upstash",
+    icon: UpstashIcon
+  },
 ];
 
 // export const abilities = [
@@ -297,7 +303,7 @@ export const mainProjects = [
     name: "Portfolio & Blog",
     description: "Personal website hosting technical writing. Published articles on continuous integration, contributing to open source, and React fundamentals. Authored a widely circulated article on creating a performant scroll indicator in React and Typescript. Wrote a 1,500 word article on contributing to open source as a beginner that has received >10,000 impressions.",
     role: "2020-2024 — Design & web development",
-    frameworks: "Remix, TypeScript, SendGrid, Contentful",
+    frameworks: "Remix, TypeScript, Contentful",
     gitRepo: "",
     website: "https://www.alissanguyen.com",
     bgLight: "linear-gradient(120deg, #fde882, #f78fad)",
