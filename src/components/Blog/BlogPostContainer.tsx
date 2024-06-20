@@ -22,11 +22,6 @@ interface Props {
     contentfulTags: Awaited<ReturnType<typeof getContentfulTags>>;
 }
 
-let preUrl = process.env.NODE_ENV === "production"
-  ? 
-      "https://www.alissanguyen.com"
-    
-  : "https://";
 
 const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTags }) => {
     const { theme } = useTheme();
@@ -107,7 +102,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                     </div>
                 </div>
                 <Image
-                    src={preUrl + blogPost.fields.blogPostSplash.fields.file.url}
+                    src={"https:" + blogPost.fields.blogPostSplash.fields.file.url}
                     className="BlogPost__SplashImage max-w-[1200px] mb-5 xl:mb-10 mx-auto rounded-lg w-[83%] custom3:w-[85%] xs:w-[90%] xl:w-full"
                     alt={blogPost.fields.blogPostSplash.fields.title}
                     title={blogPost.fields.blogPostSplash.fields.title}
