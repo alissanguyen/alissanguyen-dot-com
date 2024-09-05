@@ -318,7 +318,7 @@ export const mainProjects = [
     role: "2020 — Web development",
     gitRepo: "https://github.com/alissanguyen/planets",
     frameworks: "Javascript, HTML, CSS & styled-components",
-    website: "https://planets.alissanguyen.dev",
+    website: "https://planets.alissanguyen.com/",
     bgLight: "linear-gradient(120deg, #fbc2eb, #a6c1ee)",
     bgDark: "linear-gradient(120deg, #deb0df 11.2%, #a16bfe)"
   },
@@ -328,7 +328,7 @@ export const mainProjects = [
     gitRepo: "https://github.com/alissanguyen/memory-game",
     frameworks: "Javascript, HTML, CSS",
     role: "2020 — Web development",
-    website: "https://memory.alissanguyen.dev/",
+    website: "https://memory.alissanguyen.com/",
     bgLight: "linear-gradient(120deg, #e1ff9c, #99e5a2)",
     bgDark: "linear-gradient(120deg, #c7eb59 11.2%, #6de195)"
   },
@@ -340,63 +340,63 @@ export const otherProjects = [
     name: "Launch Countdown",
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
-    website: "https://launch.alissanguyen.dev"
+    website: "https://launch.alissanguyen.com/"
   },
   {
     iconSrc: ClipboardIcon,
     name: "Clipboard Page",
     description: "Responsive landing page for a tool called Clipboard with animations and transitions.",
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
-    website: "https://clipboard.alissanguyen.dev",
+    website: "https://clipboard.alissanguyen.com/",
   },
   {
     iconSrc: GitHubSpotterIcon,
     name: "GitHub Spotter 2.0",
     description: "A website designed to search GitHub users by usernames with GitHub API.",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
-    website: "https://githubspotter2.alissanguyen.dev"
+    website: "https://githubspotter2.alissanguyen.com/"
   },
   {
     iconSrc: AtomIcon,
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
-    website: "https://atom.alissanguyen.dev",
+    website: "https://atom.alissanguyen.com/",
   },
   {
     iconSrc: CalculatorIcon,
     name: "Calculator App",
     description: "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
-    website: "https://calculator.alissanguyen.dev",
+    website: "https://calculator.alissanguyen.com/",
   },
   {
     iconSrc: InvoiceAppIcon,
     name: "Invoice App Demo",
     description: "A demo UI for invoices management.",
     gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
-    website: "https://invoices.alissanguyen.dev"
+    website: "https://invoices.alissanguyen.com/"
   },
   {
     iconSrc: LoLIcon,
     name: "League of Legends",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
-    website: "https://league.alissanguyen.dev",
+    website: "https://league.alissanguyen.com/",
   },
   {
     iconSrc: PomodoroIcon,
     name: "Pomodoro Timer App",
     description: "A pomodoro inspired timer with mobile-first design.",
     gitRepo: "https://github.com/alissanguyen/pomodoro-app",
-    website: "https://pomodoro.alissanguyen.dev/"
+    website: "https://pomodoro.alissanguyen.com/"
   },
   {
     iconSrc: WeatherlyIcon,
     name: "Weatherly",
     description: "A 5-day weather website that includes forecast for every 3 hours.",
     gitRepo: "https://github.com/alissanguyen/weatherly",
-    website: "https://weatherly.alissanguyen.dev/"
+    website: "https://weatherly.alissanguyen.com/"
   }
 ];
 
