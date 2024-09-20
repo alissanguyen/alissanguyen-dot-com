@@ -118,7 +118,7 @@ export const SOCIAL_MEDIA_METADATA: SocialMediaIconData[] = [
     name: "Linkedin",
     className: "icon linkedin text-black hover:text-white",
     icon: () => <FaLinkedin />,
-    externalUrl: "https://www.linkedin.com/in/alissa-nguyen-dev/"
+    externalUrl: "https://www.linkedin.com/in/alissanguyen-com/"
   }
 ];
 export const contactFormHtmlId = "contact-form";
