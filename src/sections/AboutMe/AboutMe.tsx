@@ -48,7 +48,7 @@ const AboutMe: React.FC<React.PropsWithChildren> = () => {
 
   return (
     <section id="AboutMe" className="AboutMe__Wrapper">
-      <article className="aboutme-wrapper mt-[35%] xs:mt-[25%] md:mt-[15%] flex flex-row gap-5 lg:gap-10 relative">
+      <article className="aboutme-wrapper mt-[35%] xs:mt-[25%] md:mt-[15%] flex flex-row gap-5 lg:gap-2 relative">
         <div className="Introduction__Wrapper grid grid-cols-1 custom:grid-cols-7 gap-5" id="introductionWrapper">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <Image
@@ -142,24 +142,24 @@ const AboutMeStats: React.FC<React.PropsWithChildren> = ({ }) => {
         </div>
         <div className='flex flex-col items-start gap-3 sm:gap-6 text-lg custom:text-xl text-textSmColor'>
           <div className="flex flex-col items-start leading-7">
-            <span className="text-subText font-light">Name</span>
-            <span className="font-seminbold">Tam Nguyen</span>
-            <span className="font-semibold">Nickname: Alissa / Avione</span>
+            <span className="text-subText font-extralight">Name</span>
+            <span className="font-semibold tracking-wide">Tam Nguyen</span>
+            <span className="font-semibold tracking-wide">Nickname: Alissa / Julia</span>
           </div>
 
           <div className="flex flex-col items-start">
-            <span className="text-subText font-light">Phone</span>
-            <span className="font-semibold">(425) 728-0312</span>
+            <span className="text-subText font-extralight">Phone</span>
+            <span className="font-semibold tracking-wide">(425) 728-0312</span>
           </div>
 
           <div className="flex flex-col items-start">
-            <span className="text-subText font-light">Email</span>
-            <span className="font-semibold">im.tamnguyen@gmail.com</span>
+            <span className="text-subText font-extralight">Email</span>
+            <span className="font-semibold tracking-wide">im.tamnguyen@gmail.com</span>
           </div>
 
           <div className="flex flex-col items-start">
-            <span >Location</span>
-            <span className="font-semibold">Seattle, Washington, USA</span>
+            <span className="text-subText font-extralight">Location</span>
+            <span className="font-semibold tracking-wide">Seattle, Washington, USA</span>
           </div>
         </div>
       </div>

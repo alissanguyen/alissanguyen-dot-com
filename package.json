@@ -15,6 +15,7 @@
     "@heroicons/react": "^2.1.3",
     "@reach/menu-button": "^0.16.2",
     "@reach/router": "^1.3.4",
+    "caniuse-lite": "",
     "contentful": "^9.1.6",
     "framer-motion": "^6.2.8",
     "next": "14.2.3",

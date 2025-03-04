@@ -33,6 +33,7 @@
 .title-content {
   font-size: 30px;
   line-height: 40px;
+  font-weight: 500;
 }
 
 .title-content__container {
@@ -51,6 +52,7 @@
   animation-name: title-change;
   animation-duration: 10s;
   animation-iteration-count: infinite;
+  font-weight: 400;
 }
 
 @keyframes title-opacity {

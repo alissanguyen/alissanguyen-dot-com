@@ -71,7 +71,7 @@ const Navbar: React.FC = (props) => {
       >
         <nav className="NavBar__Wrapper flex flex-row relative"  >
           <div className="NavBar__InnerWrapper fixed z-[100] flex w-full left-[0] xl:left-auto mb-10 pt-5" style={navbarStyle}>
-            <div className="flex flex-row items-center justify-between w-full gap-40 max-w-screen-xl mx-auto p-8 sm:p-12 pb-10 lg:px-0 lg:pb-5 lg:pt-0">
+            <div className="flex flex-row items-center justify-between w-full gap-40 max-w-screen-lg mx-auto p-8 sm:p-12 pb-10 lg:px-0 lg:pb-5 lg:pt-0">
               <div>
                 <NavLogo
                   isCurrentRoute={getIsActiveRoute(

@@ -21,7 +21,7 @@ const Skills: React.FC<Props> = ({ }) => {
             <p className="PublishedSoftware__Text text-4xl Resume__BigText font-semibold mb-8">My Tools & Skills</p>
             <div className="line-break-gradient"></div>
             <div className="skills-section-container mt-8">
-                <ul className="abilities-wrapper mt-5 md:mt-0 grid grid-cols-2 custom3:grid-cols-3 sm:grid-cols-4 custom:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 gap-3 sm:gap-5 w-full justify-center items-center">
+                <ul className="abilities-wrapper mt-5 md:mt-0 grid grid-cols-2 custom3:grid-cols-3 sm:grid-cols-4 custom:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-5 w-full justify-center items-center">
                     {techs.map((tech: Tech, index: number) => (
                         <li key={tech.id}>
                             <div

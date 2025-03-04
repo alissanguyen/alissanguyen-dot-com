@@ -86,7 +86,7 @@ const BlogPostsContainer: React.FC<Props> = ({ blogPosts, contentfulTags }) => {
     // TODO: Persists tags and search selection in the url
 
     return (
-        <div className={`${fixedWidthLayoutClasses} max-w-screen-xl mt-[35%] xs:mt-[25%] md:mt-[15%]`}>
+        <div className={`${fixedWidthLayoutClasses} max-w-screen-lg mt-[35%] xs:mt-[25%] md:mt-[15%]`}>
             <SearchBarSection
                 search={searchInput}
                 setSearch={setSearchInput}

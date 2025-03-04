@@ -31,10 +31,10 @@ const RelatedPostCard: React.FC<Props> = (props) => {
         />
       </a>
       <div className="flex flex-col">
-        <span className="inline-flex text-xl md:text-2xl text-gray-400 font-bold mt-2 mb-3">
+        <span className="inline-flex text-lg md:text-xl text-gray-400 font-light mt-2 mb-3">
           {date} — 5 min read
         </span>
-        <span className="RelatedBlogPost__Title text-blog-lgText font-bold text-2xl md:text-3xl">
+        <span className="RelatedBlogPost__Title tracking-tight text-blog-lgText text-2xl md:text-3xl">
           {props.post.fields.blogPostTitle}
         </span>
         <div>

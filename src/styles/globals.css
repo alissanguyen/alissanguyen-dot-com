@@ -1,9 +1,18 @@
 /* CUSTOM GLOBAL STYLES EVEN MORE HAHA */
-@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique:wght@300;400;500;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 
 @layer utilities {
   .transition-filter {
@@ -339,11 +348,9 @@ html.dark-theme-slug {
 body {
   font-size: 62.5%;
   overflow-x: hidden;
-  font-weight: 400;
   width: 100%;
   background-color: var(--background-color);
   font-display: block;
-  font-family: "Zen Kaku Gothic Antique", sans-serif;
 }
 
 .Special__Font {

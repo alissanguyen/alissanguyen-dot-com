@@ -75,7 +75,6 @@ const SkillBar: React.FC<Props> = ({ }) => {
                             className={`bar-inner w-0 flex justify-end text-sm items-center font-medium ${key} w-${skillsRef.current[key as keyof SkillsData]} animate-${key}`}
                             style={{ width: `${skillsRef.current[key as keyof SkillsData]}%` }}
                         >
-                            {`${skillsRef.current[key as keyof SkillsData]}%`}
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
 
             <div className="text-post-bodyText">
                 <div
-                    className={`${fixedWidthLayoutClasses} max-w-screen-xl flex flex-col mb-5 xl:mb-10`}
+                    className={`${fixedWidthLayoutClasses} max-w-screen-lg flex flex-col mb-5 xl:mb-10`}
                 >
                     <a
                         href="/blog"
@@ -89,7 +89,7 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                         />
                         Back to blog
                     </a>
-                    <h1 className="BlogPost__Title flex w-full text-4xl text-post-bodyTextLg xs:text-5xl md:text-6xl font-bold max-w-[900px] mx-auto mb-4 custom2:mb-8 md:mb-12">
+                    <h1 className="BlogPost__Title tracking-tight flex w-full text-4xl text-post-bodyTextLg xs:text-5xl md:text-6xl max-w-[900px] mx-auto mb-4 custom2:mb-8 md:mb-12">
                         {blogPost.fields.blogPostTitle}
                     </h1>
                     <div className="w-full flex flex-col custom2:flex-row custom2:justify-between custom2:items-center mt-2 mx-auto max-w-[900px]">
@@ -103,11 +103,11 @@ const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTag
                 </div>
                 <Image
                     src={"https:" + blogPost.fields.blogPostSplash.fields.file.url}
-                    className="BlogPost__SplashImage max-w-[1200px] mb-5 xl:mb-10 mx-auto rounded-lg w-[83%] custom3:w-[85%] xs:w-[90%] xl:w-full"
+                    className="BlogPost__SplashImage max-w-[1100px] mb-5 xl:mb-10 mx-auto rounded-lg w-[80%]"
                     alt={blogPost.fields.blogPostSplash.fields.title}
                     title={blogPost.fields.blogPostSplash.fields.title}
-                    width={1200}
-                    height={600}
+                    width={900}
+                    height={450}
                 />
                 <div
                     className={`BlogPost text-post-bodyText ${fixedWidthLayoutClasses} mb-20 max-w-[900px]`}

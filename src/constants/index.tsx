@@ -17,7 +17,8 @@ import InvoiceAppIcon from "../../public/assets/otherprojects/invoice.png"
 import LoLIcon from "../../public/assets/otherprojects/game.png"
 import PomodoroIcon from "../../public/assets/otherprojects/pomodoro.png"
 import WeatherlyIcon from "../../public/assets/otherprojects/weather.png"
-
+import ValentineIcon from "../../public/assets/otherprojects/hearts.png";
+import ChessIcon from "../../public/assets/otherprojects/chess.png";
 import PythonIcon from "../../public/assets/images/tech/python.svg";
 import AWSIcon from "../../public/assets/images/tech/aws-dark.svg";
 import CloudflareIcon from "../../public/assets/images/tech/cloudflare.svg";
@@ -335,6 +336,20 @@ export const mainProjects = [
 ];
 
 export const otherProjects = [
+  {
+    iconSrc: ChessIcon,
+    name: "Chess Game",
+    description: "A chess game with multiplayer feature. Players can play against each other or AI.",
+    gitRepo: "https://github.com/alissanguyen/chess-ai",
+    website: "https://chess.alissanguyen.com/"
+  },
+  {
+    iconSrc: ValentineIcon,
+    name: "Valentine's Day",
+    description: "A simple Valentine's Day landing page with animations.",
+    gitRepo: "https://github.com/alissanguyen/lovey-dovey-2025",
+    website: "https://loveydovey.alissanguyen.com"
+  },
   {
     iconSrc: LaunchCountdownIcon,
     name: "Launch Countdown",
