@@ -97,11 +97,6 @@ a:hover .underline-animation {
 }
 
 /* SKILL BARS */
-.title-skills {
-  letter-spacing: 10px;
-  transition: all 400ms ease-in-out;
-}
-
 .bar-outer {
   height: 1.25rem;
   background: var(--base02);
@@ -111,48 +106,35 @@ a:hover .underline-animation {
 .bar-inner {
   height: 1.25rem;
   border-radius: 0.3em;
+  width: 0%;
   transition: width 2s cubic-bezier(0.19, 1, 0.22, 1);
-  padding-right: 0.5em;
-  color: var(--sub-text-color);
 }
 
-.animate  {
-  animation: bar-fill 4s cubic-bezier(0.19, 1, 0.22, 1) forwards;
-}
-
-
-@keyframes bar-fill {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: attr(width);
-  }
-}
+/* Individual Skill Colors */
 .html {
   background-image: linear-gradient(45deg, #e22222, #af4261);
 }
-  
+
 .css {
   background-image: linear-gradient(45deg, #ffd42b, #de530e);
 }
-  
+
 .javascript {
-    background-image: linear-gradient(45deg, #fa7d6f, #dba504);
-  }
-  
+  background-image: linear-gradient(45deg, #fa7d6f, #dba504);
+}
+
 .react {
-    background-image: linear-gradient(45deg, #f8a9a2, #ae50e0);
+  background-image: linear-gradient(45deg, #f8a9a2, #ae50e0);
 }
-  
+
 .typescript {
-    background-image: linear-gradient(45deg, #f24949, #f45100ac);
+  background-image: linear-gradient(45deg, #f24949, #f45100ac);
 }
-  
+
 .nodejs {
-    background-image: linear-gradient(45deg, #ae50e0, #ff95bc);
+  background-image: linear-gradient(45deg, #ae50e0, #ff95bc);
 }
-  
+
 .nextjs {
-    background-image: linear-gradient(45deg, #f67c90, #e4c180);
+  background-image: linear-gradient(45deg, #f67c90, #e4c180);
 }
