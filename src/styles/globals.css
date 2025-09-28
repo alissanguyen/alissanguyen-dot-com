@@ -285,8 +285,8 @@ html.dark-theme-slug {
   --globe-stroke: black;
   --elc-text: black;
   /* BLOG PAGE */
-  --blog-card-container: rgba(107, 104, 104, 0.155);
-  --blog-card-border: rgb(255, 255, 255);
+  --blog-card-container: rgba(227, 227, 227, 0.155);
+  --blog-card-border: rgba(96, 66, 125, 0.1);
   --blog-card-border-hover: rgb(25, 86, 108);
   --blog-lg-text: black;
   --blog-input-border: rgb(229 231 235);

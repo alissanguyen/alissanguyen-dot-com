@@ -28,7 +28,7 @@ const BlogPostTags: React.FC<Props> = (props) => {
         return (
           <span
             key={tag.sys.id}
-            className="PostCard__Tag inline-block bg-gray-100 rounded-full px-3 py-1 text-sm font-semibold text-gray-600 mr-2"
+            className="PostCard__Tag inline-block bg-gray-700/60 rounded-full px-3 py-1 text-sm font-semibold text-gray-100 mr-2"
           >
             #{title}
           </span>

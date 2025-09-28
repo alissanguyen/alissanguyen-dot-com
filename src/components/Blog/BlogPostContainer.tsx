@@ -188,11 +188,11 @@ const TagBadge: React.FC<TagProps> = (props) => {
     return (
         <>
             {props.theme === SupportedTheme.LIGHT ? (
-                <div className="tag-badge bg-gray-600 before:bg-gray-600 hover:bg-gray-900 before:hover:bg-gray-900 text-gray-200 hover:text-white inline-flex items-center">
+                <div className="tag-badge lowercase bg-gray-600 before:bg-gray-600 hover:bg-gray-900 before:hover:bg-gray-900 text-gray-200 hover:text-white inline-flex items-center">
                     {tagName}
                 </div>
             ) : (
-                <div className="tag-badge tag-dark bg-gray-300 before:bg-gray-300 before:hover:bg-white hover:bg-white text-gray-700 hover:text-black inline-flex items-center">
+                <div className="tag-badge lowercase tag-dark bg-gray-300 before:bg-gray-300 before:hover:bg-white hover:bg-white text-gray-700 hover:text-black inline-flex items-center">
                     {tagName}
                 </div>
             )}

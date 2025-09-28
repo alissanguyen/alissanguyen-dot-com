@@ -38,6 +38,7 @@ import PostHogIcon from "../../public/assets/images/tech/posthog.svg";
 import DrizzleIcon from "../../public/assets/images/tech/drizzleorm.svg";
 import ClerkIcon from "../../public/assets/images/tech/clerk.svg";
 import UpstashIcon from "../../public/assets/images/tech/upstash.svg";
+import { idText } from "typescript";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
@@ -125,28 +126,32 @@ export const SOCIAL_MEDIA_METADATA: SocialMediaIconData[] = [
 export const contactFormHtmlId = "contact-form";
 
 export const tags = [
-  { id: "algorithms", name: "algorithms" }, //1
-  { id: "tutorials", name: "tutorials" }, //2
-  { id: "frontEnd", name: "front-end" }, //3
-  { id: "backEnd", name: "backend" }, //4
-  { id: "css", name: "css" }, //5
-  { id: "html", name: "html" }, //6
-  { id: "javascript", name: "javascript" }, //7
-  { id: "personal", name: "personal" }, //8
-  { id: "react", name: "react" }, //9
-  { id: "remix", name: "remix" }, //10
-  { id: "pytorch", name: "pytorch" },
-  { id: "git", name: "git" }, //12
-  { id: "resources", name: "resources" }, //13
-  { id: "testing", name: "testing" }, //14
-  { id: "security", name: "security" }, //15
-  { id: "hosting", name: "hosting" }, //16
-  { id: "databases", name: "databases" }, //17
-  { id: "aiml", name: "AI/ML" }, //18
-  { id: "dataStructures", name: "data structures" }, //19
-  { id: "python", name: "python" }, //20
-  { id: "misc", name: "miscellaneous" }, //21
-];
+  { id: "algorithmsDataStructures", name: "algorithms & data structures" },
+  { id: "systemDesign", name: "system design" },
+  { id: "misc", name: "miscellaneous" },
+  { id: "python", name: "python" },
+  
+  { id: "aiml", name: "AI/ML" },
+  { id: "security", name: "security" },
+  { id: "hosting", name: "web fundamentals" },
+  { id: "databases", name: "databases" },
+  { id: "tutorials", name: "tutorials & projects" },
+  { id: "testing", name: "testing" },
+  { id: "git", name: "git" },
+  { id: "react", name: "react" },
+  { id: "personal", name: "personal" },
+  { id: "javascript", name: "javascript" },
+
+    { id: "frontEnd", name: "frontend" },
+    { id: "backEnd", name: "backend" },
+    
+    // { id: "tooling", name: "tooling" },
+    // { id: "devops", name: "devops" },
+    // { id: "leetcode", name: "leetcode" },
+    { id: "debugging", name: "debugging" },
+    
+    
+]
 
 export const enum TEXT_HIGHLIGHT {
   BLUE = "var(--blue)",
