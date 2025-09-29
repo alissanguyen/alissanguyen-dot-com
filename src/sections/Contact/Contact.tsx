@@ -35,7 +35,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
     const EMAILJS_KEY = process.env.NEXT_PUBLIC_EMAILJS_KEY;
 
     const initialFormData = {
-        service_id: 'service_q7qz7n8',
+        service_id: 'service_1zfhg8t',
         template_id: 'template_9tmyq5i',
         user_id: EMAILJS_KEY,
         template_params: {
