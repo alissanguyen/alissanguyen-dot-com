@@ -3,6 +3,7 @@ import BlogPostContainer from "@/components/Blog/BlogPostContainer";
 import { getContentfulBlogPostBySlug } from "@/contentful/contentfulClient";
 import "@/styles/blogpost.css"
 import { Metadata, Viewport } from "next";
+import { notFound } from "next/navigation";
 
 const TWITTER_PUBLISHER = "https://twitter.com/ai_alissa";
 const TWITTER_CARD_TYPE = "summary_large_image";
@@ -15,10 +16,16 @@ const BLOG_KEYWORDS =
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   if (!params.slug) {
-    throw new Error("Missing slug in params.");
+    notFound();
   }
 
-  const blogPost = await getContentfulBlogPostBySlug(params.slug);
+  let blogPost;
+  try {
+    blogPost = await getContentfulBlogPostBySlug(params.slug);
+  } catch (e) {
+    console.error(e);
+    notFound();
+  }
 
   const title = blogPost.fields.blogPostTitle;
   const description = blogPost.fields.blogPostExcerpt.slice(0, 160) + "... ";
@@ -72,11 +79,11 @@ export const viewport: Viewport = {
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   if (!params.slug) {
-    throw new Error("Missing slug in params.");
+    notFound();
   }
 
   try {
-    const [blogPost, { blogPosts, contentfulTags }] = await Promise.all([
+    const [blogPost, { blogPosts }] = await Promise.all([
       getContentfulBlogPostBySlug(params.slug),
       getPostsAndTags(),
     ]);
@@ -85,11 +92,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
       <BlogPostContainer
         blogPost={blogPost}
         blogPosts={blogPosts}
-        contentfulTags={contentfulTags}
       />
     );
   } catch (e) {
     console.error(e);
-    throw new Response(undefined, { status: 404 });
+    notFound();
   }
 }
