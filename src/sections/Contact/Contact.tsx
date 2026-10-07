@@ -33,10 +33,12 @@ interface Error {
 const ContactForm: React.FC<ContactFormProps> = ({ }) => {
     const [error, setError] = React.useState<Error | null>();
     const EMAILJS_KEY = process.env.NEXT_PUBLIC_EMAILJS_KEY;
+    const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 
     const initialFormData = {
-        service_id: 'service_1zfhg8t',
-        template_id: 'template_9tmyq5i',
+        service_id: EMAILJS_SERVICE_ID,
+        template_id: EMAILJS_TEMPLATE_ID,
         user_id: EMAILJS_KEY,
         template_params: {
             name: '',
@@ -60,17 +62,26 @@ const ContactForm: React.FC<ContactFormProps> = ({ }) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
+        if (!formData.service_id || !formData.template_id) {
+            console.error('Missing EmailJS service/template ID environment variables.');
+            setError({ type: AlertType.ERROR, message: "Message failed to send, please try again later." });
+            return;
+        }
+
         // Validate the message field
         if (typeof formData.template_params.message !== "string") {
             setError({ type: AlertType.ERROR, message: "Your message is not a string." });
             return;
         }
 
+        // Reject messages containing any of a fixed set of HTML tags (script, iframe, embed, etc.)
+        // via negative lookahead, since the message is rendered in the notification email.
         if (!formData.template_params.message.match(/^(?!.*<script>)(?!.*<\/script>)(?!.*<iframe>)(?!.*<\/iframe>)(?!.*<embed>)(?!.*<\/embed>)(?!.*<object>)(?!.*<\/object>)(?!.*<applet>)(?!.*<\/applet>)(?!.*<style>)(?!.*<\/style>)(?!.*<link>)(?!.*<\/link>)(?!.*<meta>)(?!.*<\/meta>).*$/)) {
             setError({ type: AlertType.ERROR, message: "Please enter a valid message without any HTML tags." });
             return;
         }
 
+        // Basic keyword-based spam filter for bot/crypto-scam submissions.
         const transformedMsg = formData.template_params.message.toLowerCase();
         if (
             transformedMsg.includes(" bot ") ||
