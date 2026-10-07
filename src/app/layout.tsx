@@ -9,6 +9,7 @@ import { cookies } from 'next/headers';
 import { THEME_KEY, ThemeSchema } from '@/utils/theming';
 import { SupportedTheme } from '@/types';
 import { ThemeContextProvider } from '@/providers/ThemeProvider';
+import { WEBSITE_URL } from '@/utils/site';
 
 export const WEBSITE_KEYWORDS =
   "Learn Remix, React, JavaScript, Typescript, Alissa Nguyen Blog, Alissa Nguyen, Software Development, Software Engineer, Modern Programing, Frontend Engineer, Web Developer, AlissaNguyen, Seattle, Full-stack developer, Web development, Software engineering, Programming languages, Responsive web design, User experience (UX), User interface (UI), Front-end development, Back-end development, Web applications, Mobile-friendly websites.";
@@ -16,15 +17,13 @@ export const WEBSITE_KEYWORDS =
 const WEBSITE_DESCRIPTION =
   "Hi, I'm Alissa. I'm a software engineer in Seattle with expertise in creating innovative and user-friendly web applications. I deliver high-quality, responsive websites that prioritize user experience. I enjoy building software with elegant, performant, and maintainable frontend code.";
 
-const WEBSITE_URL = "https://www.alissanguyen.com/";
 const PORTFOLIO_WEBSITE_NAME = "Alissa Nguyen";
 
 const IMAGE_WIDTH = "1200";
 const IMAGE_HEIGHT = "630";
 const TWITTER_ACC = "@ai_alissa";
 const TWITTER_CARD_TYPE = "summary_large_image";
-const PORTFOLIO_IMAGE_URL =
-  "http://www.alissanguyen.com/assets/images/preview.png";
+const PORTFOLIO_IMAGE_URL = `${WEBSITE_URL}/assets/images/preview.png`;
 
 export const metadata: Metadata = {
   title: PORTFOLIO_WEBSITE_NAME,

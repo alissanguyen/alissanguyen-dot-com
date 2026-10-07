@@ -1,6 +1,6 @@
 # Alissa Nguyen's Website
 
-URL https://www.alissanguyen.com
+URL https://www.alissanguyen.me
 
 This is my personal portfolio website and also is where I publish my writings.
 

@@ -38,6 +38,7 @@ import PostHogIcon from "../../public/assets/images/tech/posthog.svg";
 import DrizzleIcon from "../../public/assets/images/tech/drizzleorm.svg";
 import ClerkIcon from "../../public/assets/images/tech/clerk.svg";
 import UpstashIcon from "../../public/assets/images/tech/upstash.svg";
+import { WEBSITE_URL, subdomainUrl } from "@/utils/site";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {
@@ -310,7 +311,7 @@ export const mainProjects = [
     role: "2020-2024 — Design & web development",
     frameworks: "Remix, TypeScript, Contentful",
     gitRepo: "",
-    website: "https://www.alissanguyen.com",
+    website: WEBSITE_URL,
     bgLight: "linear-gradient(120deg, #fde882, #f78fad)",
     bgDark:
       "linear-gradient(120deg, #f6d365 0%, #fda085 31%, #e3613b 95%)"
@@ -323,7 +324,7 @@ export const mainProjects = [
     role: "2020 — Web development",
     gitRepo: "https://github.com/alissanguyen/planets",
     frameworks: "Javascript, HTML, CSS & styled-components",
-    website: "https://planets.alissanguyen.com/",
+    website: subdomainUrl("planets"),
     bgLight: "linear-gradient(120deg, #fbc2eb, #a6c1ee)",
     bgDark: "linear-gradient(120deg, #deb0df 11.2%, #a16bfe)"
   },
@@ -333,7 +334,7 @@ export const mainProjects = [
     gitRepo: "https://github.com/alissanguyen/memory-game",
     frameworks: "Javascript, HTML, CSS",
     role: "2020 — Web development",
-    website: "https://memory.alissanguyen.com/",
+    website: subdomainUrl("memory"),
     bgLight: "linear-gradient(120deg, #e1ff9c, #99e5a2)",
     bgDark: "linear-gradient(120deg, #c7eb59 11.2%, #6de195)"
   },
@@ -345,77 +346,77 @@ export const otherProjects = [
     name: "Chess Game",
     description: "A chess game with multiplayer feature. Players can play against each other or AI.",
     gitRepo: "https://github.com/alissanguyen/chess-ai",
-    website: "https://chess.alissanguyen.com/"
+    website: subdomainUrl("chess")
   },
   {
     iconSrc: ValentineIcon,
     name: "Valentine's Day",
     description: "A simple Valentine's Day landing page with animations.",
     gitRepo: "https://github.com/alissanguyen/lovey-dovey-2025",
-    website: "https://loveydovey.alissanguyen.com"
+    website: subdomainUrl("loveydovey")
   },
   {
     iconSrc: LaunchCountdownIcon,
     name: "Launch Countdown",
     description: "A demo launch countdown page with animations.",
     gitRepo: "https://github.com/alissanguyen/launch-countdown",
-    website: "https://launch.alissanguyen.com/"
+    website: subdomainUrl("launch")
   },
   {
     iconSrc: ClipboardIcon,
     name: "Clipboard Page",
     description: "Responsive landing page for a tool called Clipboard with animations and transitions.",
     gitRepo: "https://github.com/alissanguyen/clipboard-page",
-    website: "https://clipboard.alissanguyen.com/",
+    website: subdomainUrl("clipboard"),
   },
   {
     iconSrc: GitHubSpotterIcon,
     name: "GitHub Spotter 2.0",
     description: "A website designed to search GitHub users by usernames with GitHub API.",
     gitRepo: "https://github.com/alissanguyen/github-spotter-2",
-    website: "https://githubspotter2.alissanguyen.com/"
+    website: subdomainUrl("githubspotter2")
   },
   {
     iconSrc: AtomIcon,
     name: "Atom",
     description: "A responsive website with animations and futuristic design.",
     gitRepo: "https://github.com/alissanguyen/atom",
-    website: "https://atom.alissanguyen.com/",
+    website: subdomainUrl("atom"),
   },
   {
     iconSrc: CalculatorIcon,
     name: "Calculator App",
     description: "A responsive calculator app with mobile-first design and custom theme widget.",
     gitRepo: "https://github.com/alissanguyen/calculator-app",
-    website: "https://calculator.alissanguyen.com/",
+    website: subdomainUrl("calculator"),
   },
   {
     iconSrc: InvoiceAppIcon,
     name: "Invoice App Demo",
     description: "A demo UI for invoices management.",
     gitRepo: "https://github.com/alissanguyen/invoice-app-demo",
-    website: "https://invoices.alissanguyen.com/"
+    website: subdomainUrl("invoices")
   },
   {
     iconSrc: LoLIcon,
     name: "League of Legends",
     description: "A demo landing page for League of Legends with animations.",
     gitRepo: "https://github.com/alissanguyen/league-demo",
-    website: "https://league.alissanguyen.com/",
+    website: subdomainUrl("league"),
   },
   {
     iconSrc: PomodoroIcon,
     name: "Pomodoro Timer App",
     description: "A pomodoro inspired timer with mobile-first design.",
     gitRepo: "https://github.com/alissanguyen/pomodoro-app",
-    website: "https://pomodoro.alissanguyen.com/"
+    website: subdomainUrl("pomodoro")
   },
   {
     iconSrc: WeatherlyIcon,
     name: "Weatherly",
     description: "A 5-day weather website that includes forecast for every 3 hours.",
     gitRepo: "https://github.com/alissanguyen/weatherly",
-    website: "https://weatherly.alissanguyen.com/"
+    website: subdomainUrl("weatherly")
   }
 ];
 

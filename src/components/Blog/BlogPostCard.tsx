@@ -6,6 +6,7 @@ import CopyURLButton from "./CopyURLButton";
 import { MdDateRange } from "react-icons/md";
 import { ContentfulBlogPost } from "@/contentful/types";
 import { tags } from "@/constants";
+import { WEBSITE_URL } from "@/utils/site";
 interface Props {
   blogPost: Entry<ContentfulBlogPost>;
 }
@@ -18,7 +19,7 @@ const BlogPostCard: React.FC<Props> = (props) => {
   const rawDate = new Date(blogPost.sys.createdAt).toDateString();
   const publishedDate = rawDate.substring(rawDate.indexOf(" ") + 1);
 
-  const postUrl = `https://www.alissanguyen.com/blog/${blogPost.fields.blogPostSlug}`;
+  const postUrl = `${WEBSITE_URL}/blog/${blogPost.fields.blogPostSlug}`;
   const [userRecentlyCopiedText, setUsetRecentlyCopiedText] =
     React.useState(false);
 

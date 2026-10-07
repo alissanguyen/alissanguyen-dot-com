@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react";
+import { WEBSITE_URL } from "@/utils/site";
 
 interface Props {
   title: string;
@@ -10,12 +11,13 @@ interface Props {
 // TODO: Check if shared links are correct and up to date
 const ShareSection: React.FC<Props> = (props) => {
   const tweetMsg = `I just read ${props.title} by @alissa_nguyen14\n\n`;
-  const twitterShareHref = `https://twitter.com/intent/tweet?hashtags=programming%2Cblog&original_referer=https%3A%2F%2Fwww.alissanguyen.com%2F&related=ai_alissa&text=${tweetMsg}%0A%0A&url=https%3A%2F%2Fwww.alissanguyen.com%2Fblog%2F${props.slug}%2F`;
+  const encodedWebsiteUrl = encodeURIComponent(`${WEBSITE_URL}/`);
+  const twitterShareHref = `https://twitter.com/intent/tweet?hashtags=programming%2Cblog&original_referer=${encodedWebsiteUrl}&related=ai_alissa&text=${tweetMsg}%0A%0A&url=${encodeURIComponent(`${WEBSITE_URL}/blog/${props.slug}/`)}`;
   const facebookShareHref =
-    "https://www.facebook.com/sharer/sharer.php?u=https://www.alissanguyen.com/blog/" +
+    `https://www.facebook.com/sharer/sharer.php?u=${WEBSITE_URL}/blog/` +
     props.slug;
   const linkedinShareHref =
-    "https://www.linkedin.com/shareArticle?mini=true&url=https://www.alissanguyen.com/blog/" +
+    `https://www.linkedin.com/shareArticle?mini=true&url=${WEBSITE_URL}/blog/` +
     props.slug +
     "&title=" +
     props.title;

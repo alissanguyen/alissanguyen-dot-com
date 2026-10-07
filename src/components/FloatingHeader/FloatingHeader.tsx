@@ -7,6 +7,7 @@ import { GoHome } from "react-icons/go";
 import { SimplifiedThemeButton } from "../ThemeButton/ThemeButton";
 import "./FloatingHeader.css"
 import { NAVBAR_ID } from "@/constants";
+import { WEBSITE_URL } from "@/utils/site";
 
 interface Props extends React.PropsWithChildren {
   postTitle: string;
@@ -64,7 +65,7 @@ const FloatingHeader: React.FC<Props> = (props) => {
     >
       <div className="hidden sm:flex flex-row items-center ">
         <div className="floating-header-logo font-medium ml-4 text-post-bodyTextLg">
-          <a href="https://www.alissanguyen.com/blog">
+          <a href={`${WEBSITE_URL}/blog`}>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <span className="hidden xs:flex">Alissa Nguyen's Blog</span>
           </a>

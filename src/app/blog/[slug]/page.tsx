@@ -4,6 +4,7 @@ import { getContentfulBlogPostBySlug } from "@/contentful/contentfulClient";
 import "@/styles/blogpost.css"
 import { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
+import { WEBSITE_URL } from "@/utils/site";
 
 const TWITTER_PUBLISHER = "https://twitter.com/ai_alissa";
 const TWITTER_CARD_TYPE = "summary_large_image";
@@ -35,7 +36,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const imageURl = "https:" + blogPost.fields.blogPostSplash.fields.file.url;
 
-  const webURL = "https://www.alissanguyen.com/blog/" + params.slug;
+  const webURL = `${WEBSITE_URL}/blog/` + params.slug;
   const publishedDate = blogPost.sys.createdAt;
   const updatedDate = blogPost.sys.updatedAt;
 
