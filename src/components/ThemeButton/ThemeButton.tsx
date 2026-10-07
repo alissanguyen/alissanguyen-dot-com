@@ -17,7 +17,7 @@ const getClassName = (theme: SupportedTheme) => {
     : "border-2 border-gray-400 hover:border-white";
 };
 
-const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
+const ThemeButton: React.FC<React.PropsWithChildren> = () => {
   const { theme, updateTheme } = useTheme();
   const { modalIsOpen } = useModalContext();
   const className = getClassName(theme);
@@ -105,7 +105,7 @@ const ThemeButton: React.FC<React.PropsWithChildren> = (props) => {
 
 interface MoonIconProps {
 }
-const MoonIcon: React.FC<MoonIconProps> = (props) => (
+const MoonIcon: React.FC<MoonIconProps> = () => (
   <Image
     src={MoonIconImage}
     alt="Moon icon"

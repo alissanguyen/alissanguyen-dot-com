@@ -3,7 +3,6 @@
 import * as React from "react";
 import ShareSection from "./ShareSection";
 import ProgressBar from "./ProgressBar";
-import { BsFillArrowLeftCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 import { GoHome } from "react-icons/go";
 import { SimplifiedThemeButton } from "../ThemeButton/ThemeButton";
 import "./FloatingHeader.css"

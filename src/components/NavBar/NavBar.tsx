@@ -11,7 +11,7 @@ import { SupportedTheme } from "@/types";
 import "./NavBar.css"
 import NavLink from "./NavLink";
 
-const Navbar: React.FC = (props) => {
+const Navbar: React.FC = () => {
 
   const pathname = usePathname();
   const { theme } = useTheme();
@@ -23,6 +23,9 @@ const Navbar: React.FC = (props) => {
     backgroundColor: 'var(--background-nav)',
   });
 
+  // Persists scroll position across full page reloads (e.g. hard navigation via
+  // a plain <a> tag), since the browser/Next.js only preserves scroll automatically
+  // on client-side route transitions.
   React.useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;

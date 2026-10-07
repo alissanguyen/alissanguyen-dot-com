@@ -14,16 +14,15 @@ import ArrowDarkIcon from "../../../public/assets/svg/arrowDark.svg"
 import Image from 'next/image';
 import AuthorSection from '../BlogPost/AuthorSection/AuthorSection';
 import RelatedPostsSection from '../BlogPost/RelatedPostsSection/RelatedPostsSection';
-import { getContentfulBlogPosts, getContentfulTags } from '@/contentful/contentfulClient';
+import { getContentfulBlogPosts } from '@/contentful/contentfulClient';
 
 interface Props {
     blogPost: Entry<ContentfulBlogPost>;
     blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;
-    contentfulTags: Awaited<ReturnType<typeof getContentfulTags>>;
 }
 
 
-const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts, contentfulTags }) => {
+const BlogPostContainer: React.FC<Props> = ({ blogPost, blogPosts }) => {
     const { theme } = useTheme();
 
     // $$TODO: another error in the typings for this library.

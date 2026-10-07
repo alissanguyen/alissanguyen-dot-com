@@ -38,7 +38,6 @@ import PostHogIcon from "../../public/assets/images/tech/posthog.svg";
 import DrizzleIcon from "../../public/assets/images/tech/drizzleorm.svg";
 import ClerkIcon from "../../public/assets/images/tech/clerk.svg";
 import UpstashIcon from "../../public/assets/images/tech/upstash.svg";
-import { idText } from "typescript";
 
 export const topLevelLinksOnMobile: { href: string; displayName: string }[] = [
   {

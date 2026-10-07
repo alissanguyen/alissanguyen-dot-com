@@ -31,6 +31,9 @@ import { addColour } from "./contentfulUtils";
 import Illustration from "@/components/Contentful/Illustration/Illustration";
 import Image from "next/image";
 
+// renderNode/renderMark handlers below all receive (node, children) per the
+// @contentful/rich-text-react-renderer Options type, even when a given
+// handler doesn't need one of them — that's the library's interface, not dead code.
 export const options: Options = {
   renderMark: {
     [MARKS.BOLD]: (text) => (

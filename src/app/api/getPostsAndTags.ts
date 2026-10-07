@@ -2,8 +2,6 @@ import {
   getContentfulBlogPosts,
   getContentfulTags
 } from "@/contentful/contentfulClient";
-import { ContentfulBlogPost } from "@/contentful/types";
-import { ContentfulCollection, Entry, Tag } from "contentful";
 
 export interface PostsAndTags {
   blogPosts: Awaited<ReturnType<typeof getContentfulBlogPosts>>;

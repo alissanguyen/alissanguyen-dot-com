@@ -37,6 +37,8 @@ const convertSupportedThemeToClassName = (
         } else if (onBlogRoute) {
             return 'light-theme light-theme-blog';
         } else if (onSlugRoute) {
+            // No dedicated light-theme-slug rule exists in globals.css (unlike
+            // dark-theme-slug below), so slug routes reuse the blog-wide light class.
             return 'light-theme light-theme-blog';
         }
     } else {
